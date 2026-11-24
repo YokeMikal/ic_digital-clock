@@ -1,0 +1,4248 @@
+{
+  "creator": "Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)",
+  "modules": {
+    "jam_digital_top": {
+      "attributes": {
+        "hdlname": "jam_digital_top",
+        "top": "00000000000000000000000000000001",
+        "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:10.1-153.10"
+      },
+      "parameter_default_values": {
+        "CLK_FREQ_HZ": "00000010111110101111000010000000",
+        "SCAN_DIV": "00000000000000001100001101010000"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "rst_n": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "en_i": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "fast_mode_i": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "load_en_i": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "inc_sec_i": {
+          "direction": "input",
+          "bits": [ 7 ]
+        },
+        "inc_min_i": {
+          "direction": "input",
+          "bits": [ 8 ]
+        },
+        "inc_hour_i": {
+          "direction": "input",
+          "bits": [ 9 ]
+        },
+        "load_hour_tens_i": {
+          "direction": "input",
+          "bits": [ 10, 11, 12, 13 ]
+        },
+        "load_hour_ones_i": {
+          "direction": "input",
+          "bits": [ 14, 15, 16, 17 ]
+        },
+        "load_min_tens_i": {
+          "direction": "input",
+          "bits": [ 18, 19, 20, 21 ]
+        },
+        "load_min_ones_i": {
+          "direction": "input",
+          "bits": [ 22, 23, 24, 25 ]
+        },
+        "load_sec_tens_i": {
+          "direction": "input",
+          "bits": [ 26, 27, 28, 29 ]
+        },
+        "load_sec_ones_i": {
+          "direction": "input",
+          "bits": [ 30, 31, 32, 33 ]
+        },
+        "hour_tens_o": {
+          "direction": "output",
+          "bits": [ 34, 35, 36, 37 ]
+        },
+        "hour_ones_o": {
+          "direction": "output",
+          "bits": [ 38, 39, 40, 41 ]
+        },
+        "min_tens_o": {
+          "direction": "output",
+          "bits": [ 42, 43, 44, 45 ]
+        },
+        "min_ones_o": {
+          "direction": "output",
+          "bits": [ 46, 47, 48, 49 ]
+        },
+        "sec_tens_o": {
+          "direction": "output",
+          "bits": [ 50, 51, 52, 53 ]
+        },
+        "sec_ones_o": {
+          "direction": "output",
+          "bits": [ 54, 55, 56, 57 ]
+        },
+        "am_pm_o": {
+          "direction": "output",
+          "bits": [ 58 ]
+        },
+        "rollover_pulse_o": {
+          "direction": "output",
+          "bits": [ 59 ]
+        },
+        "tick_1hz_o": {
+          "direction": "output",
+          "bits": [ 60 ]
+        },
+        "seg_o": {
+          "direction": "output",
+          "bits": [ 61, 62, 63, 64, 65, 66, 67 ]
+        },
+        "digit_sel_o": {
+          "direction": "output",
+          "bits": [ 68, 69, 70, 71, 72, 73 ]
+        }
+      },
+      "cells": {
+        "$flatten\\u_clock_divider.$add$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:55$51": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000011010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000011010",
+            "Y_WIDTH": "00000000000000000000000000011010"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:55.31-55.48"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$add$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:75$55": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000010000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000010000",
+            "Y_WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:75.28-75.47"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:51$50": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000011010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000011010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:51.17-51.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99 ],
+            "B": [ "1", "1", "1", "1", "1", "1", "1", "0", "0", "0", "0", "0", "1", "1", "1", "1", "0", "1", "0", "1", "1", "1", "1", "1", "0", "1" ],
+            "Y": [ 158 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:71$54": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000010000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000010000",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:71.22-71.42"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141 ],
+            "B": [ "1", "1", "1", "1", "0", "0", "1", "0", "1", "1", "0", "0", "0", "0", "1", "1" ],
+            "Y": [ 159 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$procdff$188": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:64.5-78.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 160 ],
+            "Q": [ 161 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$procdff$193": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0000000000000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:64.5-78.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177 ],
+            "Q": [ 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$procdff$198": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:40.5-61.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 178 ],
+            "Q": [ 60 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$procdff$203": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000000000000000000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000011010"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:40.5-61.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204 ],
+            "Q": [ 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$62": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:71.22-71.42|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:71.18-77.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 159 ],
+            "Y": [ 205 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$65": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:68.22-68.33|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:68.18-77.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 205 ],
+            "B": [ "1" ],
+            "S": [ 5 ],
+            "Y": [ 160 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$68": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:71.22-71.42|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:71.18-77.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 159 ],
+            "Y": [ 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$71": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:68.22-68.33|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:68.18-77.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 5 ],
+            "Y": [ 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$75": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:51.17-51.35|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:51.13-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 158 ],
+            "Y": [ 222 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$77": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:50.22-50.26|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:50.18-60.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 222 ],
+            "S": [ 4 ],
+            "Y": [ 223 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$80": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:47.22-47.33|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:47.18-60.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 223 ],
+            "B": [ 4 ],
+            "S": [ 5 ],
+            "Y": [ 224 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$83": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:44.22-44.37|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:44.18-60.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 224 ],
+            "B": [ "0" ],
+            "S": [ 6 ],
+            "Y": [ 178 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$87": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000011010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:51.17-51.35|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:51.13-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 158 ],
+            "Y": [ 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$89": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000011010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:50.22-50.26|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:50.18-60.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99 ],
+            "B": [ 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250 ],
+            "S": [ 4 ],
+            "Y": [ 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$92": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000011010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:47.22-47.33|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:47.18-60.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 5 ],
+            "Y": [ 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302 ]
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$95": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000011010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:44.22-44.37|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:44.18-60.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 6 ],
+            "Y": [ 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204 ]
+          }
+        },
+        "$flatten\\u_edge_pulse_sync.$and$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:33$47": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:33.22-33.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 303, 304, 305 ],
+            "B": [ 306, 307, 308 ],
+            "Y": [ 309, 310, 311 ]
+          }
+        },
+        "$flatten\\u_edge_pulse_sync.$not$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:33$46": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:33.33-33.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313, 314 ],
+            "Y": [ 306, 307, 308 ]
+          }
+        },
+        "$flatten\\u_edge_pulse_sync.$procdff$208": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:21.5-31.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 7, 8, 9 ],
+            "Q": [ 315, 316, 317 ]
+          }
+        },
+        "$flatten\\u_edge_pulse_sync.$procdff$213": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:21.5-31.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 315, 316, 317 ],
+            "Q": [ 303, 304, 305 ]
+          }
+        },
+        "$flatten\\u_edge_pulse_sync.$procdff$218": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:21.5-31.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 303, 304, 305 ],
+            "Q": [ 312, 313, 314 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$add$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:50$28": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:50.37-50.50"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 38, 39, 40, 41 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 318, 319, 320, 321 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40$21": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40.18-40.32"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 34, 35, 36, 37 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 322 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40$22": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40.38-40.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 38, 39, 40, 41 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 323 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:45$25": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:45.27-45.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 34, 35, 36, 37 ],
+            "Y": [ 324 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:45$26": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:45.47-45.61"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 38, 39, 40, 41 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 325 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$ge$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:24$11": {
+          "hide_name": 1,
+          "type": "$ge",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:24.33-24.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 10, 11, 12, 13 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 326 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$ge$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:25$13": {
+          "hide_name": 1,
+          "type": "$ge",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:25.33-25.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 10, 11, 12, 13 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 327 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$gt$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:26$14": {
+          "hide_name": 1,
+          "type": "$gt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:26.36-26.54"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 14, 15, 16, 17 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 328 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$gt$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:27$16": {
+          "hide_name": 1,
+          "type": "$gt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:27.36-27.54"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 14, 15, 16, 17 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 329 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$logic_and$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40$23": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40.17-40.53"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 322 ],
+            "B": [ 323 ],
+            "Y": [ 330 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$logic_and$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:45$27": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:45.26-45.62"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 324 ],
+            "B": [ 325 ],
+            "Y": [ 331 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$not$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:43$24": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:43.37-43.45"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 58 ],
+            "Y": [ 332 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procdff$233": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29.5-56.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 333 ],
+            "Q": [ 58 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procdff$238": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29.5-56.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 334 ],
+            "Q": [ 59 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procdff$243": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29.5-56.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 335, 336, 337, 338 ],
+            "Q": [ 34, 35, 36, 37 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procdff$248": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29.5-56.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 339, 340, 341, 342 ],
+            "Q": [ 38, 39, 40, 41 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$123": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40.17-40.53|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40.13-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 330 ],
+            "Y": [ 343 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$125": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:39.22-39.27|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:39.18-55.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 343 ],
+            "S": [ 344 ],
+            "Y": [ 345 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$128": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:35.22-35.31|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:35.18-55.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 345 ],
+            "B": [ "0" ],
+            "S": [ 6 ],
+            "Y": [ 334 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$132": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:45.26-45.62|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:45.22-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 318, 319, 320, 321 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 331 ],
+            "Y": [ 346, 347, 348, 349 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$135": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40.17-40.53|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40.13-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 346, 347, 348, 349 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 330 ],
+            "Y": [ 350, 351, 352, 353 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$137": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:39.22-39.27|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:39.18-55.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 38, 39, 40, 41 ],
+            "B": [ 350, 351, 352, 353 ],
+            "S": [ 344 ],
+            "Y": [ 354, 355, 356, 357 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$140": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:35.22-35.31|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:35.18-55.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 354, 355, 356, 357 ],
+            "B": [ 358, 359, 360, 361 ],
+            "S": [ 6 ],
+            "Y": [ 339, 340, 341, 342 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$144": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:45.26-45.62|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:45.22-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 34, 35, 36, 37 ],
+            "B": [ "1", "0", "0", "0" ],
+            "S": [ 331 ],
+            "Y": [ 362, 363, 364, 365 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$147": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40.17-40.53|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40.13-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 362, 363, 364, 365 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 330 ],
+            "Y": [ 366, 367, 368, 369 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$149": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:39.22-39.27|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:39.18-55.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 34, 35, 36, 37 ],
+            "B": [ 366, 367, 368, 369 ],
+            "S": [ 344 ],
+            "Y": [ 370, 371, 372, 373 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$152": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:35.22-35.31|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:35.18-55.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 370, 371, 372, 373 ],
+            "B": [ 374, 375, 376, 377 ],
+            "S": [ 6 ],
+            "Y": [ 335, 336, 337, 338 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$156": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40.17-40.53|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40.13-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 58 ],
+            "B": [ 332 ],
+            "S": [ 330 ],
+            "Y": [ 378 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$158": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:39.22-39.27|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:39.18-55.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 58 ],
+            "B": [ 378 ],
+            "S": [ 344 ],
+            "Y": [ 379 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$161": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:35.22-35.31|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:35.18-55.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 379 ],
+            "B": [ 58 ],
+            "S": [ 6 ],
+            "Y": [ 333 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$ternary$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:24$12": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:24.32-24.67"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0" ],
+            "B": [ "1", "0", "0", "0" ],
+            "S": [ 326 ],
+            "Y": [ 374, 375, 376, 377 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$ternary$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:25$18": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:25.32-27.77"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 380, 381, 382, 383 ],
+            "B": [ 384, 385, 386, 387 ],
+            "S": [ 327 ],
+            "Y": [ 358, 359, 360, 361 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$ternary$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:26$15": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:26.35-26.76"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 14, 15, 16, 17 ],
+            "B": [ "1", "0", "0", "0" ],
+            "S": [ 328 ],
+            "Y": [ 384, 385, 386, 387 ]
+          }
+        },
+        "$flatten\\u_hour_counter.$ternary$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:27$17": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:27.35-27.76"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 14, 15, 16, 17 ],
+            "B": [ "1", "0", "0", "1" ],
+            "S": [ 329 ],
+            "Y": [ 380, 381, 382, 383 ]
+          }
+        },
+        "$flatten\\u_min_counter.$add$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:38$39": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:38.27-38.40"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 42, 43, 44, 45 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 388, 389, 390, 391 ]
+          }
+        },
+        "$flatten\\u_min_counter.$add$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:41$40": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:41.27-41.40"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 46, 47, 48, 49 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 392, 393, 394, 395 ]
+          }
+        },
+        "$flatten\\u_min_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34$35": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.18-34.32"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 42, 43, 44, 45 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 396 ]
+          }
+        },
+        "$flatten\\u_min_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34$36": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.38-34.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 46, 47, 48, 49 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 397 ]
+          }
+        },
+        "$flatten\\u_min_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:37$38": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:37.26-37.40"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 46, 47, 48, 49 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 398 ]
+          }
+        },
+        "$flatten\\u_min_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46$41": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46.24-46.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 42, 43, 44, 45 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 399 ]
+          }
+        },
+        "$flatten\\u_min_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46$42": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46.44-46.58"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 46, 47, 48, 49 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 400 ]
+          }
+        },
+        "$flatten\\u_min_counter.$gt$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:23$29": {
+          "hide_name": 1,
+          "type": "$gt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:23.33-23.51"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 18, 19, 20, 21 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 401 ]
+          }
+        },
+        "$flatten\\u_min_counter.$gt$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:24$31": {
+          "hide_name": 1,
+          "type": "$gt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:24.33-24.51"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 22, 23, 24, 25 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 402 ]
+          }
+        },
+        "$flatten\\u_min_counter.$logic_and$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34$37": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.17-34.53"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 396 ],
+            "B": [ 397 ],
+            "Y": [ 403 ]
+          }
+        },
+        "$flatten\\u_min_counter.$logic_and$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46$43": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46.23-46.59"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 399 ],
+            "B": [ 400 ],
+            "Y": [ 404 ]
+          }
+        },
+        "$flatten\\u_min_counter.$procdff$223": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:26.5-44.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 405, 406, 407, 408 ],
+            "Q": [ 42, 43, 44, 45 ]
+          }
+        },
+        "$flatten\\u_min_counter.$procdff$228": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:26.5-44.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 409, 410, 411, 412 ],
+            "Q": [ 46, 47, 48, 49 ]
+          }
+        },
+        "$flatten\\u_min_counter.$procmux$101": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.17-34.53|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.13-42.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 413, 414, 415, 416 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 403 ],
+            "Y": [ 417, 418, 419, 420 ]
+          }
+        },
+        "$flatten\\u_min_counter.$procmux$103": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:33.22-33.27|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:33.18-43.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 46, 47, 48, 49 ],
+            "B": [ 417, 418, 419, 420 ],
+            "S": [ 421 ],
+            "Y": [ 422, 423, 424, 425 ]
+          }
+        },
+        "$flatten\\u_min_counter.$procmux$106": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:30.22-30.31|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:30.18-43.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 422, 423, 424, 425 ],
+            "B": [ 426, 427, 428, 429 ],
+            "S": [ 6 ],
+            "Y": [ 409, 410, 411, 412 ]
+          }
+        },
+        "$flatten\\u_min_counter.$procmux$109": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:37.26-37.40|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:37.22-42.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 42, 43, 44, 45 ],
+            "B": [ 388, 389, 390, 391 ],
+            "S": [ 398 ],
+            "Y": [ 430, 431, 432, 433 ]
+          }
+        },
+        "$flatten\\u_min_counter.$procmux$112": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.17-34.53|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.13-42.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 430, 431, 432, 433 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 403 ],
+            "Y": [ 434, 435, 436, 437 ]
+          }
+        },
+        "$flatten\\u_min_counter.$procmux$114": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:33.22-33.27|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:33.18-43.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 42, 43, 44, 45 ],
+            "B": [ 434, 435, 436, 437 ],
+            "S": [ 421 ],
+            "Y": [ 438, 439, 440, 441 ]
+          }
+        },
+        "$flatten\\u_min_counter.$procmux$117": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:30.22-30.31|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:30.18-43.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 438, 439, 440, 441 ],
+            "B": [ 442, 443, 444, 445 ],
+            "S": [ 6 ],
+            "Y": [ 405, 406, 407, 408 ]
+          }
+        },
+        "$flatten\\u_min_counter.$procmux$98": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:37.26-37.40|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:37.22-42.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 392, 393, 394, 395 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 398 ],
+            "Y": [ 413, 414, 415, 416 ]
+          }
+        },
+        "$flatten\\u_min_counter.$ternary$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:23$30": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:23.32-23.73"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 18, 19, 20, 21 ],
+            "B": [ "1", "0", "1", "0" ],
+            "S": [ 401 ],
+            "Y": [ 442, 443, 444, 445 ]
+          }
+        },
+        "$flatten\\u_min_counter.$ternary$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:24$32": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:24.32-24.73"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 22, 23, 24, 25 ],
+            "B": [ "1", "0", "0", "1" ],
+            "S": [ 402 ],
+            "Y": [ 426, 427, 428, 429 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$add$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:38$39": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:38.27-38.40"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 50, 51, 52, 53 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 446, 447, 448, 449 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$add$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:41$40": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:41.27-41.40"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 54, 55, 56, 57 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 450, 451, 452, 453 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34$35": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.18-34.32"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 50, 51, 52, 53 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 454 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34$36": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.38-34.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 54, 55, 56, 57 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 455 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:37$38": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:37.26-37.40"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 54, 55, 56, 57 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 456 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46$41": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46.24-46.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 50, 51, 52, 53 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 457 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46$42": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46.44-46.58"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 54, 55, 56, 57 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 458 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$gt$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:23$29": {
+          "hide_name": 1,
+          "type": "$gt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:23.33-23.51"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 26, 27, 28, 29 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 459 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$gt$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:24$31": {
+          "hide_name": 1,
+          "type": "$gt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:24.33-24.51"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 30, 31, 32, 33 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 460 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$logic_and$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34$37": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.17-34.53"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 454 ],
+            "B": [ 455 ],
+            "Y": [ 461 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$logic_and$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46$43": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46.23-46.59"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 457 ],
+            "B": [ 458 ],
+            "Y": [ 462 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$procdff$223": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:26.5-44.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 463, 464, 465, 466 ],
+            "Q": [ 50, 51, 52, 53 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$procdff$228": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:26.5-44.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 467, 468, 469, 470 ],
+            "Q": [ 54, 55, 56, 57 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$procmux$101": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.17-34.53|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.13-42.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 471, 472, 473, 474 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 461 ],
+            "Y": [ 475, 476, 477, 478 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$procmux$103": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:33.22-33.27|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:33.18-43.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 54, 55, 56, 57 ],
+            "B": [ 475, 476, 477, 478 ],
+            "S": [ 479 ],
+            "Y": [ 480, 481, 482, 483 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$procmux$106": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:30.22-30.31|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:30.18-43.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 480, 481, 482, 483 ],
+            "B": [ 484, 485, 486, 487 ],
+            "S": [ 6 ],
+            "Y": [ 467, 468, 469, 470 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$procmux$109": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:37.26-37.40|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:37.22-42.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 50, 51, 52, 53 ],
+            "B": [ 446, 447, 448, 449 ],
+            "S": [ 456 ],
+            "Y": [ 488, 489, 490, 491 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$procmux$112": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.17-34.53|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.13-42.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 488, 489, 490, 491 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 461 ],
+            "Y": [ 492, 493, 494, 495 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$procmux$114": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:33.22-33.27|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:33.18-43.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 50, 51, 52, 53 ],
+            "B": [ 492, 493, 494, 495 ],
+            "S": [ 479 ],
+            "Y": [ 496, 497, 498, 499 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$procmux$117": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:30.22-30.31|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:30.18-43.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 496, 497, 498, 499 ],
+            "B": [ 500, 501, 502, 503 ],
+            "S": [ 6 ],
+            "Y": [ 463, 464, 465, 466 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$procmux$98": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:37.26-37.40|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:37.22-42.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 450, 451, 452, 453 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 456 ],
+            "Y": [ 471, 472, 473, 474 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$ternary$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:23$30": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:23.32-23.73"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 26, 27, 28, 29 ],
+            "B": [ "1", "0", "1", "0" ],
+            "S": [ 459 ],
+            "Y": [ 500, 501, 502, 503 ]
+          }
+        },
+        "$flatten\\u_sec_counter.$ternary$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:24$32": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:24.32-24.73"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 30, 31, 32, 33 ],
+            "B": [ "1", "0", "0", "1" ],
+            "S": [ 460 ],
+            "Y": [ 484, 485, 486, 487 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$add$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:77$10": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:77.34-77.50"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 504, 505, 506 ],
+            "B": [ "1", "0", "0" ],
+            "Y": [ 507, 508, 509 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:74$9": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:74.21-74.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 504, 505, 506 ],
+            "B": [ "1", "0", "1" ],
+            "Y": [ 510 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procdff$253": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0111111",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000111"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:65.5-81.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 511, 512, 513, 514, 515, 516, 517 ],
+            "Q": [ 61, 62, 63, 64, 65, 66, 67 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procdff$258": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "000001",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000110"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:65.5-81.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 518, 519, 520, 521, 522, 523 ],
+            "Q": [ 68, 69, 70, 71, 72, 73 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procdff$263": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:65.5-81.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 524, 525, 526 ],
+            "Q": [ 504, 505, 506 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$164": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:74.21-74.38|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:74.17-78.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 507, 508, 509 ],
+            "B": [ "0", "0", "0" ],
+            "S": [ 510 ],
+            "Y": [ 527, 528, 529 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$166": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:73.17-73.28|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:73.13-79.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 504, 505, 506 ],
+            "B": [ 527, 528, 529 ],
+            "S": [ 161 ],
+            "Y": [ 524, 525, 526 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$169": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000101",
+            "WIDTH": "00000000000000000000000000000110"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:48.16-48.16|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:28.9-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "0", "0", "0", "0", "0" ],
+            "B": [ "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "1", "0", "0", "0", "0", "1", "0", "0", "0", "0", "1", "0", "0", "0", "0", "1", "0", "0", "0", "0" ],
+            "S": [ 530, 531, 532, 533, 534 ],
+            "Y": [ 518, 519, 520, 521, 522, 523 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$170_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:48.16-48.16|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:28.9-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 504, 505, 506 ],
+            "B": [ "1", "0", "1" ],
+            "Y": [ 530 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$171_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:44.16-44.16|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:28.9-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 504, 505, 506 ],
+            "B": [ "0", "0", "1" ],
+            "Y": [ 531 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$172_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:40.16-40.16|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:28.9-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 504, 505, 506 ],
+            "B": [ "1", "1", "0" ],
+            "Y": [ 532 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$173_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:36.16-36.16|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:28.9-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 504, 505, 506 ],
+            "B": [ "0", "1", "0" ],
+            "Y": [ 533 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$174_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:32.16-32.16|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:28.9-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 504, 505, 506 ],
+            "B": [ "1", "0", "0" ],
+            "Y": [ 534 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$176": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000110",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:48.16-48.16|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:28.9-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0" ],
+            "B": [ 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57 ],
+            "S": [ 535, 536, 537, 538, 539, 540 ],
+            "Y": [ 541, 542, 543, 544 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$177_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:48.16-48.16|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:28.9-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 504, 505, 506 ],
+            "B": [ "1", "0", "1" ],
+            "Y": [ 535 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$178_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:44.16-44.16|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:28.9-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 504, 505, 506 ],
+            "B": [ "0", "0", "1" ],
+            "Y": [ 536 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$179_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:40.16-40.16|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:28.9-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 504, 505, 506 ],
+            "B": [ "1", "1", "0" ],
+            "Y": [ 537 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$180_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:36.16-36.16|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:28.9-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 504, 505, 506 ],
+            "B": [ "0", "1", "0" ],
+            "Y": [ 538 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$181_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:32.16-32.16|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:28.9-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 504, 505, 506 ],
+            "B": [ "1", "0", "0" ],
+            "Y": [ 539 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$182_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:28.25-28.25|/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:28.9-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 504, 505, 506 ],
+            "Y": [ 540 ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.\\u_bcd_to_7seg.$auto$mem.cc:305:emit$59": {
+          "hide_name": 1,
+          "type": "$memrd_v2",
+          "parameters": {
+            "ABITS": "00000000000000000000000000000100",
+            "ARST_VALUE": "xxxxxxx",
+            "CE_OVER_SRST": "00000000000000000000000000000000",
+            "CLK_ENABLE": "00000000000000000000000000000000",
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "COLLISION_X_MASK": "",
+            "INIT_VALUE": "xxxxxxx",
+            "MEMID": "$flatten\\u_seven_seg_mux6.\\u_bcd_to_7seg.$auto$proc_rom.cc:155:do_switch$58",
+            "SRST_VALUE": "xxxxxxx",
+            "TRANSPARENCY_MASK": "",
+            "WIDTH": "00000000000000000000000000000111"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_to_7seg.v:14.9-26.16"
+          },
+          "port_directions": {
+            "ADDR": "input",
+            "ARST": "input",
+            "CLK": "input",
+            "DATA": "output",
+            "EN": "input",
+            "SRST": "input"
+          },
+          "connections": {
+            "ADDR": [ 541, 542, 543, 544 ],
+            "ARST": [ "0" ],
+            "CLK": [ "x" ],
+            "DATA": [ 511, 512, 513, 514, 515, 516, 517 ],
+            "EN": [ "1" ],
+            "SRST": [ "0" ]
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.\\u_bcd_to_7seg.$auto$mem.cc:351:emit$60": {
+          "hide_name": 1,
+          "type": "$meminit",
+          "parameters": {
+            "ABITS": "00000000000000000000000000100000",
+            "MEMID": "$flatten\\u_seven_seg_mux6.\\u_bcd_to_7seg.$auto$proc_rom.cc:155:do_switch$58",
+            "PRIORITY": "00000000000000000000000000000000",
+            "WIDTH": "00000000000000000000000000000111",
+            "WORDS": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_to_7seg.v:14.9-26.16"
+          },
+          "port_directions": {
+            "ADDR": "input",
+            "DATA": "input"
+          },
+          "connections": {
+            "ADDR": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "DATA": [ "1", "1", "1", "1", "1", "1", "0", "0", "1", "1", "0", "0", "0", "0", "1", "1", "0", "1", "1", "0", "1", "1", "1", "1", "1", "0", "0", "1", "0", "1", "1", "0", "0", "1", "1", "1", "0", "1", "1", "0", "1", "1", "1", "0", "1", "1", "1", "1", "1", "1", "1", "1", "0", "0", "0", "0", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "0", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+          }
+        },
+        "$logic_and$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:88$1": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:88.29-88.51"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 60 ],
+            "B": [ 462 ],
+            "Y": [ 545 ]
+          }
+        },
+        "$logic_and$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:89$2": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:89.29-89.57"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 545 ],
+            "B": [ 404 ],
+            "Y": [ 546 ]
+          }
+        },
+        "$logic_or$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:92$3": {
+          "hide_name": 1,
+          "type": "$logic_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:92.23-92.48"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 60 ],
+            "B": [ 309 ],
+            "Y": [ 479 ]
+          }
+        },
+        "$logic_or$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:93$4": {
+          "hide_name": 1,
+          "type": "$logic_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:93.23-93.54"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 545 ],
+            "B": [ 310 ],
+            "Y": [ 421 ]
+          }
+        },
+        "$logic_or$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:94$5": {
+          "hide_name": 1,
+          "type": "$logic_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:94.23-94.55"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 546 ],
+            "B": [ 311 ],
+            "Y": [ 344 ]
+          }
+        }
+      },
+      "memories": {
+        "$flatten\\u_seven_seg_mux6.\\u_bcd_to_7seg.$auto$proc_rom.cc:155:do_switch$58": {
+          "hide_name": 1,
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_to_7seg.v:14.9-26.16"
+          },
+          "width": 7,
+          "start_offset": 0,
+          "size": 16
+        }
+      },
+      "netnames": {
+        "$flatten\\u_clock_divider.$0\\scan_cnt[15:0]": {
+          "hide_name": 1,
+          "bits": [ 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:64.5-78.8"
+          }
+        },
+        "$flatten\\u_clock_divider.$0\\sec_cnt[25:0]": {
+          "hide_name": 1,
+          "bits": [ 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:40.5-61.8"
+          }
+        },
+        "$flatten\\u_clock_divider.$0\\tick_1hz_o[0:0]": {
+          "hide_name": 1,
+          "bits": [ 178 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:40.5-61.8"
+          }
+        },
+        "$flatten\\u_clock_divider.$0\\tick_scan_o[0:0]": {
+          "hide_name": 1,
+          "bits": [ 160 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:64.5-78.8"
+          }
+        },
+        "$flatten\\u_clock_divider.$add$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:55$51_Y": {
+          "hide_name": 1,
+          "bits": [ 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:55.31-55.48"
+          }
+        },
+        "$flatten\\u_clock_divider.$add$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:75$55_Y": {
+          "hide_name": 1,
+          "bits": [ 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:75.28-75.47"
+          }
+        },
+        "$flatten\\u_clock_divider.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:51$50_Y": {
+          "hide_name": 1,
+          "bits": [ 158 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:51.17-51.35"
+          }
+        },
+        "$flatten\\u_clock_divider.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:71$54_Y": {
+          "hide_name": 1,
+          "bits": [ 159 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:71.22-71.42"
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$62_Y": {
+          "hide_name": 1,
+          "bits": [ 205 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$68_Y": {
+          "hide_name": 1,
+          "bits": [ 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$75_Y": {
+          "hide_name": 1,
+          "bits": [ 222 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$77_Y": {
+          "hide_name": 1,
+          "bits": [ 223 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$80_Y": {
+          "hide_name": 1,
+          "bits": [ 224 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$87_Y": {
+          "hide_name": 1,
+          "bits": [ 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$89_Y": {
+          "hide_name": 1,
+          "bits": [ 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_clock_divider.$procmux$92_Y": {
+          "hide_name": 1,
+          "bits": [ 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_edge_pulse_sync.$not$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:33$46_Y": {
+          "hide_name": 1,
+          "bits": [ 306, 307, 308 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:33.33-33.41"
+          }
+        },
+        "$flatten\\u_hour_counter.$0\\am_pm_o[0:0]": {
+          "hide_name": 1,
+          "bits": [ 333 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29.5-56.8"
+          }
+        },
+        "$flatten\\u_hour_counter.$0\\ones_o[3:0]": {
+          "hide_name": 1,
+          "bits": [ 339, 340, 341, 342 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29.5-56.8"
+          }
+        },
+        "$flatten\\u_hour_counter.$0\\rollover_pulse_o[0:0]": {
+          "hide_name": 1,
+          "bits": [ 334 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29.5-56.8"
+          }
+        },
+        "$flatten\\u_hour_counter.$0\\tens_o[3:0]": {
+          "hide_name": 1,
+          "bits": [ 335, 336, 337, 338 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29.5-56.8"
+          }
+        },
+        "$flatten\\u_hour_counter.$add$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:50$28_Y": {
+          "hide_name": 1,
+          "bits": [ 318, 319, 320, 321 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:50.37-50.50"
+          }
+        },
+        "$flatten\\u_hour_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40$21_Y": {
+          "hide_name": 1,
+          "bits": [ 322 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40.18-40.32"
+          }
+        },
+        "$flatten\\u_hour_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40$22_Y": {
+          "hide_name": 1,
+          "bits": [ 323 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40.38-40.52"
+          }
+        },
+        "$flatten\\u_hour_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:45$25_Y": {
+          "hide_name": 1,
+          "bits": [ 324 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:45.27-45.41"
+          }
+        },
+        "$flatten\\u_hour_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:45$26_Y": {
+          "hide_name": 1,
+          "bits": [ 325 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:45.47-45.61"
+          }
+        },
+        "$flatten\\u_hour_counter.$ge$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:24$11_Y": {
+          "hide_name": 1,
+          "bits": [ 326 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:24.33-24.52"
+          }
+        },
+        "$flatten\\u_hour_counter.$ge$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:25$13_Y": {
+          "hide_name": 1,
+          "bits": [ 327 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:25.33-25.52"
+          }
+        },
+        "$flatten\\u_hour_counter.$gt$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:26$14_Y": {
+          "hide_name": 1,
+          "bits": [ 328 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:26.36-26.54"
+          }
+        },
+        "$flatten\\u_hour_counter.$gt$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:27$16_Y": {
+          "hide_name": 1,
+          "bits": [ 329 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:27.36-27.54"
+          }
+        },
+        "$flatten\\u_hour_counter.$logic_and$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40$23_Y": {
+          "hide_name": 1,
+          "bits": [ 330 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:40.17-40.53"
+          }
+        },
+        "$flatten\\u_hour_counter.$logic_and$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:45$27_Y": {
+          "hide_name": 1,
+          "bits": [ 331 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:45.26-45.62"
+          }
+        },
+        "$flatten\\u_hour_counter.$not$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:43$24_Y": {
+          "hide_name": 1,
+          "bits": [ 332 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:43.37-43.45"
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$123_Y": {
+          "hide_name": 1,
+          "bits": [ 343 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$125_Y": {
+          "hide_name": 1,
+          "bits": [ 345 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$132_Y": {
+          "hide_name": 1,
+          "bits": [ 346, 347, 348, 349 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$135_Y": {
+          "hide_name": 1,
+          "bits": [ 350, 351, 352, 353 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$137_Y": {
+          "hide_name": 1,
+          "bits": [ 354, 355, 356, 357 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$144_Y": {
+          "hide_name": 1,
+          "bits": [ 362, 363, 364, 365 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$147_Y": {
+          "hide_name": 1,
+          "bits": [ 366, 367, 368, 369 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$149_Y": {
+          "hide_name": 1,
+          "bits": [ 370, 371, 372, 373 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$156_Y": {
+          "hide_name": 1,
+          "bits": [ 378 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_hour_counter.$procmux$158_Y": {
+          "hide_name": 1,
+          "bits": [ 379 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_hour_counter.$ternary$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:26$15_Y": {
+          "hide_name": 1,
+          "bits": [ 384, 385, 386, 387 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:26.35-26.76"
+          }
+        },
+        "$flatten\\u_hour_counter.$ternary$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:27$17_Y": {
+          "hide_name": 1,
+          "bits": [ 380, 381, 382, 383 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:27.35-27.76"
+          }
+        },
+        "$flatten\\u_min_counter.$0\\ones_o[3:0]": {
+          "hide_name": 1,
+          "bits": [ 409, 410, 411, 412 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:26.5-44.8"
+          }
+        },
+        "$flatten\\u_min_counter.$0\\tens_o[3:0]": {
+          "hide_name": 1,
+          "bits": [ 405, 406, 407, 408 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:26.5-44.8"
+          }
+        },
+        "$flatten\\u_min_counter.$add$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:38$39_Y": {
+          "hide_name": 1,
+          "bits": [ 388, 389, 390, 391 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:38.27-38.40"
+          }
+        },
+        "$flatten\\u_min_counter.$add$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:41$40_Y": {
+          "hide_name": 1,
+          "bits": [ 392, 393, 394, 395 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:41.27-41.40"
+          }
+        },
+        "$flatten\\u_min_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34$35_Y": {
+          "hide_name": 1,
+          "bits": [ 396 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.18-34.32"
+          }
+        },
+        "$flatten\\u_min_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34$36_Y": {
+          "hide_name": 1,
+          "bits": [ 397 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.38-34.52"
+          }
+        },
+        "$flatten\\u_min_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:37$38_Y": {
+          "hide_name": 1,
+          "bits": [ 398 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:37.26-37.40"
+          }
+        },
+        "$flatten\\u_min_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46$41_Y": {
+          "hide_name": 1,
+          "bits": [ 399 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46.24-46.38"
+          }
+        },
+        "$flatten\\u_min_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46$42_Y": {
+          "hide_name": 1,
+          "bits": [ 400 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46.44-46.58"
+          }
+        },
+        "$flatten\\u_min_counter.$gt$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:23$29_Y": {
+          "hide_name": 1,
+          "bits": [ 401 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:23.33-23.51"
+          }
+        },
+        "$flatten\\u_min_counter.$gt$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:24$31_Y": {
+          "hide_name": 1,
+          "bits": [ 402 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:24.33-24.51"
+          }
+        },
+        "$flatten\\u_min_counter.$logic_and$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34$37_Y": {
+          "hide_name": 1,
+          "bits": [ 403 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.17-34.53"
+          }
+        },
+        "$flatten\\u_min_counter.$procmux$101_Y": {
+          "hide_name": 1,
+          "bits": [ 417, 418, 419, 420 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_min_counter.$procmux$103_Y": {
+          "hide_name": 1,
+          "bits": [ 422, 423, 424, 425 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_min_counter.$procmux$109_Y": {
+          "hide_name": 1,
+          "bits": [ 430, 431, 432, 433 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_min_counter.$procmux$112_Y": {
+          "hide_name": 1,
+          "bits": [ 434, 435, 436, 437 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_min_counter.$procmux$114_Y": {
+          "hide_name": 1,
+          "bits": [ 438, 439, 440, 441 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_min_counter.$procmux$98_Y": {
+          "hide_name": 1,
+          "bits": [ 413, 414, 415, 416 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_sec_counter.$0\\ones_o[3:0]": {
+          "hide_name": 1,
+          "bits": [ 467, 468, 469, 470 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:26.5-44.8"
+          }
+        },
+        "$flatten\\u_sec_counter.$0\\tens_o[3:0]": {
+          "hide_name": 1,
+          "bits": [ 463, 464, 465, 466 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:26.5-44.8"
+          }
+        },
+        "$flatten\\u_sec_counter.$add$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:38$39_Y": {
+          "hide_name": 1,
+          "bits": [ 446, 447, 448, 449 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:38.27-38.40"
+          }
+        },
+        "$flatten\\u_sec_counter.$add$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:41$40_Y": {
+          "hide_name": 1,
+          "bits": [ 450, 451, 452, 453 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:41.27-41.40"
+          }
+        },
+        "$flatten\\u_sec_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34$35_Y": {
+          "hide_name": 1,
+          "bits": [ 454 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.18-34.32"
+          }
+        },
+        "$flatten\\u_sec_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34$36_Y": {
+          "hide_name": 1,
+          "bits": [ 455 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.38-34.52"
+          }
+        },
+        "$flatten\\u_sec_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:37$38_Y": {
+          "hide_name": 1,
+          "bits": [ 456 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:37.26-37.40"
+          }
+        },
+        "$flatten\\u_sec_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46$41_Y": {
+          "hide_name": 1,
+          "bits": [ 457 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46.24-46.38"
+          }
+        },
+        "$flatten\\u_sec_counter.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46$42_Y": {
+          "hide_name": 1,
+          "bits": [ 458 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:46.44-46.58"
+          }
+        },
+        "$flatten\\u_sec_counter.$gt$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:23$29_Y": {
+          "hide_name": 1,
+          "bits": [ 459 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:23.33-23.51"
+          }
+        },
+        "$flatten\\u_sec_counter.$gt$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:24$31_Y": {
+          "hide_name": 1,
+          "bits": [ 460 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:24.33-24.51"
+          }
+        },
+        "$flatten\\u_sec_counter.$logic_and$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34$37_Y": {
+          "hide_name": 1,
+          "bits": [ 461 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:34.17-34.53"
+          }
+        },
+        "$flatten\\u_sec_counter.$procmux$101_Y": {
+          "hide_name": 1,
+          "bits": [ 475, 476, 477, 478 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_sec_counter.$procmux$103_Y": {
+          "hide_name": 1,
+          "bits": [ 480, 481, 482, 483 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_sec_counter.$procmux$109_Y": {
+          "hide_name": 1,
+          "bits": [ 488, 489, 490, 491 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_sec_counter.$procmux$112_Y": {
+          "hide_name": 1,
+          "bits": [ 492, 493, 494, 495 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_sec_counter.$procmux$114_Y": {
+          "hide_name": 1,
+          "bits": [ 496, 497, 498, 499 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_sec_counter.$procmux$98_Y": {
+          "hide_name": 1,
+          "bits": [ 471, 472, 473, 474 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$0\\digit_idx[2:0]": {
+          "hide_name": 1,
+          "bits": [ 524, 525, 526 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:65.5-81.8"
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$add$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:77$10_Y": {
+          "hide_name": 1,
+          "bits": [ 507, 508, 509 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:77.34-77.50"
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$eq$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:74$9_Y": {
+          "hide_name": 1,
+          "bits": [ 510 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:74.21-74.38"
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$164_Y": {
+          "hide_name": 1,
+          "bits": [ 527, 528, 529 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$170_CMP": {
+          "hide_name": 1,
+          "bits": [ 530 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$171_CMP": {
+          "hide_name": 1,
+          "bits": [ 531 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$172_CMP": {
+          "hide_name": 1,
+          "bits": [ 532 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$173_CMP": {
+          "hide_name": 1,
+          "bits": [ 533 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$174_CMP": {
+          "hide_name": 1,
+          "bits": [ 534 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$177_CMP": {
+          "hide_name": 1,
+          "bits": [ 535 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$178_CMP": {
+          "hide_name": 1,
+          "bits": [ 536 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$179_CMP": {
+          "hide_name": 1,
+          "bits": [ 537 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$180_CMP": {
+          "hide_name": 1,
+          "bits": [ 538 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$181_CMP": {
+          "hide_name": 1,
+          "bits": [ 539 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_seven_seg_mux6.$procmux$182_CMP": {
+          "hide_name": 1,
+          "bits": [ 540 ],
+          "attributes": {
+          }
+        },
+        "am_pm_o": {
+          "hide_name": 0,
+          "bits": [ 58 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:34.23-34.30"
+          }
+        },
+        "btn_pulses": {
+          "hide_name": 0,
+          "bits": [ 309, 310, 311 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:43.16-43.26"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:14.23-14.26"
+          }
+        },
+        "digit_sel_o": {
+          "hide_name": 0,
+          "bits": [ 68, 69, 70, 71, 72, 73 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:38.23-38.34"
+          }
+        },
+        "en_i": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:16.23-16.27"
+          }
+        },
+        "fast_mode_i": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:17.23-17.34"
+          }
+        },
+        "hour_inc": {
+          "hide_name": 0,
+          "bits": [ 344 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:57.16-57.24"
+          }
+        },
+        "hour_ones_o": {
+          "hide_name": 0,
+          "bits": [ 38, 39, 40, 41 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:29.23-29.34"
+          }
+        },
+        "hour_tens_o": {
+          "hide_name": 0,
+          "bits": [ 34, 35, 36, 37 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:28.23-28.34"
+          }
+        },
+        "inc_hour_i": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:21.23-21.33"
+          }
+        },
+        "inc_min_i": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:20.23-20.32"
+          }
+        },
+        "inc_sec_i": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:19.23-19.32"
+          }
+        },
+        "load_en_i": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:18.23-18.32"
+          }
+        },
+        "load_hour_ones_i": {
+          "hide_name": 0,
+          "bits": [ 14, 15, 16, 17 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:23.23-23.39"
+          }
+        },
+        "load_hour_tens_i": {
+          "hide_name": 0,
+          "bits": [ 10, 11, 12, 13 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:22.23-22.39"
+          }
+        },
+        "load_min_ones_i": {
+          "hide_name": 0,
+          "bits": [ 22, 23, 24, 25 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:25.23-25.38"
+          }
+        },
+        "load_min_tens_i": {
+          "hide_name": 0,
+          "bits": [ 18, 19, 20, 21 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:24.23-24.38"
+          }
+        },
+        "load_sec_ones_i": {
+          "hide_name": 0,
+          "bits": [ 30, 31, 32, 33 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:27.23-27.38"
+          }
+        },
+        "load_sec_tens_i": {
+          "hide_name": 0,
+          "bits": [ 26, 27, 28, 29 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:26.23-26.38"
+          }
+        },
+        "min_auto_carry": {
+          "hide_name": 0,
+          "bits": [ 546 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:53.16-53.30"
+          }
+        },
+        "min_inc": {
+          "hide_name": 0,
+          "bits": [ 421 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:56.16-56.23"
+          }
+        },
+        "min_is_max": {
+          "hide_name": 0,
+          "bits": [ 404 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:50.16-50.26"
+          }
+        },
+        "min_ones_o": {
+          "hide_name": 0,
+          "bits": [ 46, 47, 48, 49 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:31.23-31.33"
+          }
+        },
+        "min_tens_o": {
+          "hide_name": 0,
+          "bits": [ 42, 43, 44, 45 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:30.23-30.33"
+          }
+        },
+        "rollover_pulse_o": {
+          "hide_name": 0,
+          "bits": [ 59 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:35.23-35.39"
+          }
+        },
+        "rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:15.23-15.28"
+          }
+        },
+        "sec_auto_carry": {
+          "hide_name": 0,
+          "bits": [ 545 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:52.16-52.30"
+          }
+        },
+        "sec_inc": {
+          "hide_name": 0,
+          "bits": [ 479 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:55.16-55.23"
+          }
+        },
+        "sec_is_max": {
+          "hide_name": 0,
+          "bits": [ 462 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:49.16-49.26"
+          }
+        },
+        "sec_ones_o": {
+          "hide_name": 0,
+          "bits": [ 54, 55, 56, 57 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:33.23-33.33"
+          }
+        },
+        "sec_tens_o": {
+          "hide_name": 0,
+          "bits": [ 50, 51, 52, 53 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:32.23-32.33"
+          }
+        },
+        "seg_o": {
+          "hide_name": 0,
+          "bits": [ 61, 62, 63, 64, 65, 66, 67 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:37.23-37.28"
+          }
+        },
+        "tick_1hz_o": {
+          "hide_name": 0,
+          "bits": [ 60 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:36.23-36.33"
+          }
+        },
+        "tick_scan": {
+          "hide_name": 0,
+          "bits": [ 161 ],
+          "attributes": {
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v:42.16-42.25"
+          }
+        },
+        "u_clock_divider.scan_cnt": {
+          "hide_name": 0,
+          "bits": [ 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141 ],
+          "attributes": {
+            "hdlname": "u_clock_divider scan_cnt",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:37.26-37.34"
+          }
+        },
+        "u_clock_divider.sec_cnt": {
+          "hide_name": 0,
+          "bits": [ 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99 ],
+          "attributes": {
+            "hdlname": "u_clock_divider sec_cnt",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:36.26-36.33"
+          }
+        },
+        "u_edge_pulse_sync.prev_ff": {
+          "hide_name": 0,
+          "bits": [ 312, 313, 314 ],
+          "attributes": {
+            "hdlname": "u_edge_pulse_sync prev_ff",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:19.21-19.28"
+          }
+        },
+        "u_edge_pulse_sync.sync_ff1": {
+          "hide_name": 0,
+          "bits": [ 315, 316, 317 ],
+          "attributes": {
+            "hdlname": "u_edge_pulse_sync sync_ff1",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:17.21-17.29"
+          }
+        },
+        "u_edge_pulse_sync.sync_ff2": {
+          "hide_name": 0,
+          "bits": [ 303, 304, 305 ],
+          "attributes": {
+            "hdlname": "u_edge_pulse_sync sync_ff2",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:18.21-18.29"
+          }
+        },
+        "u_hour_counter.load_ones_clamped": {
+          "hide_name": 0,
+          "bits": [ 358, 359, 360, 361 ],
+          "attributes": {
+            "hdlname": "u_hour_counter load_ones_clamped",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:22.16-22.33"
+          }
+        },
+        "u_hour_counter.load_tens_clamped": {
+          "hide_name": 0,
+          "bits": [ 374, 375, 376, 377 ],
+          "attributes": {
+            "hdlname": "u_hour_counter load_tens_clamped",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:21.16-21.33"
+          }
+        },
+        "u_min_counter.load_ones_clamped": {
+          "hide_name": 0,
+          "bits": [ 426, 427, 428, 429 ],
+          "attributes": {
+            "hdlname": "u_min_counter load_ones_clamped",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:21.16-21.33"
+          }
+        },
+        "u_min_counter.load_tens_clamped": {
+          "hide_name": 0,
+          "bits": [ 442, 443, 444, 445 ],
+          "attributes": {
+            "hdlname": "u_min_counter load_tens_clamped",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:20.16-20.33"
+          }
+        },
+        "u_sec_counter.load_ones_clamped": {
+          "hide_name": 0,
+          "bits": [ 484, 485, 486, 487 ],
+          "attributes": {
+            "hdlname": "u_sec_counter load_ones_clamped",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:21.16-21.33"
+          }
+        },
+        "u_sec_counter.load_tens_clamped": {
+          "hide_name": 0,
+          "bits": [ 500, 501, 502, 503 ],
+          "attributes": {
+            "hdlname": "u_sec_counter load_tens_clamped",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:20.16-20.33"
+          }
+        },
+        "u_seven_seg_mux6.cur_bcd": {
+          "hide_name": 0,
+          "bits": [ 541, 542, 543, 544 ],
+          "attributes": {
+            "hdlname": "u_seven_seg_mux6 cur_bcd",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:23.16-23.23"
+          }
+        },
+        "u_seven_seg_mux6.decoded_seg": {
+          "hide_name": 0,
+          "bits": [ 511, 512, 513, 514, 515, 516, 517 ],
+          "attributes": {
+            "hdlname": "u_seven_seg_mux6 decoded_seg",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:25.16-25.27"
+          }
+        },
+        "u_seven_seg_mux6.digit_idx": {
+          "hide_name": 0,
+          "bits": [ 504, 505, 506 ],
+          "attributes": {
+            "hdlname": "u_seven_seg_mux6 digit_idx",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:22.16-22.25"
+          }
+        },
+        "u_seven_seg_mux6.next_digit_sel": {
+          "hide_name": 0,
+          "bits": [ 518, 519, 520, 521, 522, 523 ],
+          "attributes": {
+            "hdlname": "u_seven_seg_mux6 next_digit_sel",
+            "src": "/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:24.16-24.30"
+          }
+        }
+      }
+    }
+  }
+}

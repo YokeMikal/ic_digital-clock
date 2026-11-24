@@ -1,0 +1,14 @@
+VCD info: dumpfile results/jam_digital_rtl.vcd opened for output.
+[TB_MONITOR] TC1: Asynchronous reset check
+[TB_MONITOR] TC2: Normal prescaler 10-cycle 1Hz & pause
+[TB_MONITOR] TC3: Critical rollover boundaries
+[TB_DATA] TC3 critical rollovers verified cleanly.
+[TB_MONITOR] TC4: Exhaustive 43,200-second continuous sweep
+[TB_DATA] TC4 completed 43,200 consecutive states with 0 mismatches.
+[TB_MONITOR] TC5: Synchronous load & illegal BCD clamping
+[TB_MONITOR] TC6: Manual increment buttons & 2-FF sync
+[TB_MONITOR] TC7: 6-digit multiplexed 7-segment display
+[TB_DATA] TC7 7-segment scan verified for 10:45:29.
+[TB_MONITOR] Total Checks=43235, Errors=0
+[TB_INFO] Simulation Finished!
+../tb/tb_jam_digital_top.v:487: $finish called at 867260000 (1ps)

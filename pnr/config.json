@@ -1,0 +1,22 @@
+{
+  "DESIGN_NAME": "jam_digital_top",
+  "VERILOG_FILES": [
+    "dir::../rtl/clock_divider.v",
+    "dir::../rtl/edge_pulse_sync.v",
+    "dir::../rtl/bcd_mod60_counter.v",
+    "dir::../rtl/bcd_mod12_counter.v",
+    "dir::../rtl/bcd_to_7seg.v",
+    "dir::../rtl/seven_seg_mux6.v",
+    "dir::../rtl/jam_digital_top.v"
+  ],
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 20.0,
+  "FP_CORE_UTIL": 40,
+  "PL_TARGET_DENSITY_PCT": 55,
+  "RSZ_CORNERS": [
+    "nom_tt_025C_1v80",
+    "nom_ss_100C_1v60",
+    "nom_ff_n40C_1v95"
+  ],
+  "DESIGN_REPAIR_MAX_SLEW_PCT": 25
+}

@@ -1,0 +1,25 @@
+# Yosys Synthesis & Sky130 Standard-Cell Mapping Script for jam_digital_top
+read_verilog /home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v
+read_verilog /home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v
+read_verilog /home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v
+read_verilog /home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v
+read_verilog /home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_to_7seg.v
+read_verilog /home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v
+read_verilog /home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v
+
+hierarchy -check -top jam_digital_top
+proc
+opt
+fsm
+opt
+memory
+opt
+techmap
+opt
+check -assert
+
+dfflibmap -liberty /home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty /home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+clean
+stat -liberty /home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+write_verilog -noattr /home/yokemikal/eda/designs/projects/Jam_Digital/synth/jam_digital_top_yosys.v

@@ -1,0 +1,11 @@
+VCD info: dumpfile results/jam_digital_gls.vcd opened for output.
+[TB_MONITOR] GLS TC1: Reset verification on Sky130 netlist
+[TB_MONITOR] GLS TC2: Critical rollovers on Sky130 gates
+[TB_MONITOR] GLS TC3: Exhaustive 43,200-second sweep on Sky130 netlist
+[TB_DATA] GLS TC3 completed 43,200 consecutive states on Sky130 netlist with 0 mismatches.
+[TB_MONITOR] GLS TC4: Load & illegal BCD clamping
+[TB_MONITOR] GLS TC5: Synchronized manual increment buttons
+[TB_MONITOR] GLS TC6: 7-segment display encoding on Sky130 netlist
+[TB_MONITOR] GLS Total Checks=43229, Errors=0
+[TB_INFO] Simulation Finished!
+/home/yokemikal/eda/designs/projects/Jam_Digital/tb/tb_jam_digital_gls.v:392: $finish called at 865520000 (1ps)

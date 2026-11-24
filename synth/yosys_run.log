@@ -1,0 +1,2726 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)
+
+-- Executing script file `/home/yokemikal/eda/designs/projects/Jam_Digital/synth/synth_yosys.ys' --
+
+1. Executing Verilog-2005 frontend: /home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v
+Parsing Verilog input from `/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v' to AST representation.
+Generating RTLIL representation for module `\clock_divider'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v
+Parsing Verilog input from `/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v' to AST representation.
+Generating RTLIL representation for module `\edge_pulse_sync'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v
+Parsing Verilog input from `/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v' to AST representation.
+Generating RTLIL representation for module `\bcd_mod60_counter'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v
+Parsing Verilog input from `/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v' to AST representation.
+Generating RTLIL representation for module `\bcd_mod12_counter'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_to_7seg.v
+Parsing Verilog input from `/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_to_7seg.v' to AST representation.
+Generating RTLIL representation for module `\bcd_to_7seg'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v
+Parsing Verilog input from `/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v' to AST representation.
+Generating RTLIL representation for module `\seven_seg_mux6'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v
+Parsing Verilog input from `/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/jam_digital_top.v' to AST representation.
+Generating RTLIL representation for module `\jam_digital_top'.
+Successfully finished Verilog frontend.
+
+8. Executing HIERARCHY pass (managing design hierarchy).
+
+8.1. Analyzing design hierarchy..
+Top module:  \jam_digital_top
+Used module:     \seven_seg_mux6
+Used module:         \bcd_to_7seg
+Used module:     \bcd_mod12_counter
+Used module:     \bcd_mod60_counter
+Used module:     \edge_pulse_sync
+Used module:     \clock_divider
+Parameter \WIDTH = 3
+
+8.2. Executing AST frontend in derive mode using pre-parsed AST for module `\edge_pulse_sync'.
+Parameter \WIDTH = 3
+Generating RTLIL representation for module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Parameter \CLK_FREQ_HZ = 50000000
+Parameter \SCAN_DIV = 50000
+
+8.3. Executing AST frontend in derive mode using pre-parsed AST for module `\clock_divider'.
+Parameter \CLK_FREQ_HZ = 50000000
+Parameter \SCAN_DIV = 50000
+Generating RTLIL representation for module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+
+8.4. Analyzing design hierarchy..
+Top module:  \jam_digital_top
+Used module:     \seven_seg_mux6
+Used module:         \bcd_to_7seg
+Used module:     \bcd_mod12_counter
+Used module:     \bcd_mod60_counter
+Used module:     $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011
+Used module:     $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider
+
+8.5. Analyzing design hierarchy..
+Top module:  \jam_digital_top
+Used module:     \seven_seg_mux6
+Used module:         \bcd_to_7seg
+Used module:     \bcd_mod12_counter
+Used module:     \bcd_mod60_counter
+Used module:     $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011
+Used module:     $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider
+Removing unused module `\edge_pulse_sync'.
+Removing unused module `\clock_divider'.
+Removed 2 unused modules.
+
+9. Executing PROC pass (convert processes to netlists).
+
+9.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+9.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:65$48 in module seven_seg_mux6.
+Marked 1 switch rules as full_case in process $proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:27$47 in module seven_seg_mux6.
+Marked 1 switch rules as full_case in process $proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_to_7seg.v:13$46 in module bcd_to_7seg.
+Marked 5 switch rules as full_case in process $proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29$36 in module bcd_mod12_counter.
+Marked 4 switch rules as full_case in process $proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:26$17 in module bcd_mod60_counter.
+Marked 3 switch rules as full_case in process $proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:64$65 in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+Marked 5 switch rules as full_case in process $proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:40$61 in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+Marked 1 switch rules as full_case in process $proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:21$57 in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+Removed a total of 0 dead cases.
+
+9.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 9 redundant assignments.
+Promoted 3 assignments to connections.
+
+9.4. Executing PROC_INIT pass (extract init attributes).
+
+9.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\seven_seg_mux6.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:65$48'.
+Found async reset \rst_n in `\bcd_mod12_counter.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29$36'.
+Found async reset \rst_n in `\bcd_mod60_counter.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:26$17'.
+Found async reset \rst_n in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:64$65'.
+Found async reset \rst_n in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:40$61'.
+Found async reset \rst_n in `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:21$57'.
+
+9.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 1 switch.
+<suppressed ~17 debug messages>
+
+9.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\seven_seg_mux6.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:65$48'.
+     1/3: $0\digit_sel_o[5:0]
+     2/3: $0\seg_o[6:0]
+     3/3: $0\digit_idx[2:0]
+Creating decoders for process `\seven_seg_mux6.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:27$47'.
+     1/2: $1\next_digit_sel[5:0]
+     2/2: $1\cur_bcd[3:0]
+Creating decoders for process `\bcd_to_7seg.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_to_7seg.v:13$46'.
+     1/1: $1\seg_o[6:0]
+Creating decoders for process `\bcd_mod12_counter.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29$36'.
+     1/4: $0\rollover_pulse_o[0:0]
+     2/4: $0\am_pm_o[0:0]
+     3/4: $0\ones_o[3:0]
+     4/4: $0\tens_o[3:0]
+Creating decoders for process `\bcd_mod60_counter.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:26$17'.
+     1/2: $0\ones_o[3:0]
+     2/2: $0\tens_o[3:0]
+Creating decoders for process `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:64$65'.
+     1/2: $0\tick_scan_o[0:0]
+     2/2: $0\scan_cnt[15:0]
+Creating decoders for process `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:40$61'.
+     1/2: $0\tick_1hz_o[0:0]
+     2/2: $0\sec_cnt[25:0]
+Creating decoders for process `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:21$57'.
+     1/3: $0\prev_ff[2:0]
+     2/3: $0\sync_ff2[2:0]
+     3/3: $0\sync_ff1[2:0]
+
+9.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\seven_seg_mux6.\cur_bcd' from process `\seven_seg_mux6.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:27$47'.
+No latch inferred for signal `\seven_seg_mux6.\next_digit_sel' from process `\seven_seg_mux6.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:27$47'.
+No latch inferred for signal `\bcd_to_7seg.\seg_o' from process `\bcd_to_7seg.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_to_7seg.v:13$46'.
+
+9.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\seven_seg_mux6.\seg_o' using process `\seven_seg_mux6.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:65$48'.
+  created $adff cell `$procdff$200' with positive edge clock and positive level reset.
+Creating register for signal `\seven_seg_mux6.\digit_sel_o' using process `\seven_seg_mux6.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:65$48'.
+  created $adff cell `$procdff$205' with positive edge clock and positive level reset.
+Creating register for signal `\seven_seg_mux6.\digit_idx' using process `\seven_seg_mux6.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:65$48'.
+  created $adff cell `$procdff$210' with positive edge clock and positive level reset.
+Creating register for signal `\bcd_mod12_counter.\tens_o' using process `\bcd_mod12_counter.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29$36'.
+  created $adff cell `$procdff$215' with positive edge clock and positive level reset.
+Creating register for signal `\bcd_mod12_counter.\ones_o' using process `\bcd_mod12_counter.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29$36'.
+  created $adff cell `$procdff$220' with positive edge clock and positive level reset.
+Creating register for signal `\bcd_mod12_counter.\am_pm_o' using process `\bcd_mod12_counter.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29$36'.
+  created $adff cell `$procdff$225' with positive edge clock and positive level reset.
+Creating register for signal `\bcd_mod12_counter.\rollover_pulse_o' using process `\bcd_mod12_counter.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29$36'.
+  created $adff cell `$procdff$230' with positive edge clock and positive level reset.
+Creating register for signal `\bcd_mod60_counter.\tens_o' using process `\bcd_mod60_counter.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:26$17'.
+  created $adff cell `$procdff$235' with positive edge clock and positive level reset.
+Creating register for signal `\bcd_mod60_counter.\ones_o' using process `\bcd_mod60_counter.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:26$17'.
+  created $adff cell `$procdff$240' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.\tick_scan_o' using process `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:64$65'.
+  created $adff cell `$procdff$245' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.\scan_cnt' using process `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:64$65'.
+  created $adff cell `$procdff$250' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.\tick_1hz_o' using process `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:40$61'.
+  created $adff cell `$procdff$255' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.\sec_cnt' using process `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:40$61'.
+  created $adff cell `$procdff$260' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.\sync_ff1' using process `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:21$57'.
+  created $adff cell `$procdff$265' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.\sync_ff2' using process `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:21$57'.
+  created $adff cell `$procdff$270' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.\prev_ff' using process `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:21$57'.
+  created $adff cell `$procdff$275' with positive edge clock and positive level reset.
+
+9.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+9.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\seven_seg_mux6.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:65$48'.
+Removing empty process `seven_seg_mux6.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:65$48'.
+Found and cleaned up 1 empty switch in `\seven_seg_mux6.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:27$47'.
+Removing empty process `seven_seg_mux6.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/seven_seg_mux6.v:27$47'.
+Found and cleaned up 1 empty switch in `\bcd_to_7seg.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_to_7seg.v:13$46'.
+Removing empty process `bcd_to_7seg.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_to_7seg.v:13$46'.
+Found and cleaned up 4 empty switches in `\bcd_mod12_counter.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29$36'.
+Removing empty process `bcd_mod12_counter.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:29$36'.
+Found and cleaned up 4 empty switches in `\bcd_mod60_counter.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:26$17'.
+Removing empty process `bcd_mod60_counter.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod60_counter.v:26$17'.
+Found and cleaned up 2 empty switches in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:64$65'.
+Removing empty process `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:64$65'.
+Found and cleaned up 4 empty switches in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:40$61'.
+Removing empty process `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/clock_divider.v:40$61'.
+Removing empty process `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.$proc$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/edge_pulse_sync.v:21$57'.
+Cleaned up 18 empty switches.
+
+9.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module jam_digital_top.
+Optimizing module seven_seg_mux6.
+<suppressed ~7 debug messages>
+Optimizing module bcd_to_7seg.
+Optimizing module bcd_mod12_counter.
+<suppressed ~9 debug messages>
+Optimizing module bcd_mod60_counter.
+<suppressed ~4 debug messages>
+Optimizing module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+<suppressed ~8 debug messages>
+Optimizing module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+<suppressed ~6 debug messages>
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module jam_digital_top.
+Optimizing module seven_seg_mux6.
+Optimizing module bcd_to_7seg.
+Optimizing module bcd_mod12_counter.
+Optimizing module bcd_mod60_counter.
+Optimizing module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+Optimizing module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\jam_digital_top'.
+Computing hashes of 11 cells of `\jam_digital_top'.
+Finding duplicate cells in `\jam_digital_top'.
+Finding identical cells in module `\seven_seg_mux6'.
+Computing hashes of 25 cells of `\seven_seg_mux6'.
+Finding duplicate cells in `\seven_seg_mux6'.
+Computing hashes of 17 cells of `\seven_seg_mux6'.
+Finding duplicate cells in `\seven_seg_mux6'.
+<suppressed ~24 debug messages>
+Finding identical cells in module `\bcd_to_7seg'.
+Computing hashes of 2 cells of `\bcd_to_7seg'.
+Finding duplicate cells in `\bcd_to_7seg'.
+Finding identical cells in module `\bcd_mod12_counter'.
+Computing hashes of 39 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Computing hashes of 35 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+<suppressed ~12 debug messages>
+Finding identical cells in module `\bcd_mod60_counter'.
+Computing hashes of 26 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+Computing hashes of 22 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+Computing hashes of 21 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+<suppressed ~15 debug messages>
+Finding identical cells in module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Computing hashes of 26 cells of `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding duplicate cells in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Computing hashes of 22 cells of `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding duplicate cells in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+<suppressed ~12 debug messages>
+Finding identical cells in module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Computing hashes of 9 cells of `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding duplicate cells in `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Computing hashes of 7 cells of `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding duplicate cells in `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+<suppressed ~6 debug messages>
+Removed a total of 23 cells.
+
+10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \jam_digital_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \seven_seg_mux6..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bcd_to_7seg..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \bcd_mod12_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bcd_mod60_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~57 debug messages>
+
+10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \jam_digital_top.
+  Optimizing cells in module \seven_seg_mux6.
+  Optimizing cells in module \bcd_to_7seg.
+  Optimizing cells in module \bcd_mod12_counter.
+  Optimizing cells in module \bcd_mod60_counter.
+  Optimizing cells in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+  Optimizing cells in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+Performed a total of 0 changes.
+
+10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\jam_digital_top'.
+Computing hashes of 11 cells of `\jam_digital_top'.
+Finding duplicate cells in `\jam_digital_top'.
+Finding identical cells in module `\seven_seg_mux6'.
+Computing hashes of 17 cells of `\seven_seg_mux6'.
+Finding duplicate cells in `\seven_seg_mux6'.
+Finding identical cells in module `\bcd_to_7seg'.
+Computing hashes of 2 cells of `\bcd_to_7seg'.
+Finding duplicate cells in `\bcd_to_7seg'.
+Finding identical cells in module `\bcd_mod12_counter'.
+Computing hashes of 35 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Finding identical cells in module `\bcd_mod60_counter'.
+Computing hashes of 21 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+Finding identical cells in module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Computing hashes of 22 cells of `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding duplicate cells in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding identical cells in module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Computing hashes of 7 cells of `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding duplicate cells in `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Removed a total of 0 cells.
+
+10.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$210 ($adff) from module seven_seg_mux6 (D = $procmux$74_Y, Q = \digit_idx).
+Adding EN signal on $procdff$220 ($adff) from module bcd_mod12_counter (D = $procmux$124_Y, Q = \ones_o).
+Adding EN signal on $procdff$225 ($adff) from module bcd_mod12_counter (D = $not$/home/yokemikal/eda/designs/projects/Jam_Digital/rtl/bcd_mod12_counter.v:43$41_Y, Q = \am_pm_o).
+Adding EN signal on $procdff$215 ($adff) from module bcd_mod12_counter (D = $procmux$136_Y, Q = \tens_o).
+Adding EN signal on $procdff$240 ($adff) from module bcd_mod60_counter (D = $procmux$147_Y, Q = \ones_o).
+Adding EN signal on $procdff$235 ($adff) from module bcd_mod60_counter (D = $procmux$158_Y, Q = \tens_o).
+Adding EN signal on $procdff$260 ($adff) from module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider (D = $procmux$194_Y, Q = \sec_cnt).
+
+10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \jam_digital_top..
+Finding unused cells or wires in module \seven_seg_mux6..
+Finding unused cells or wires in module \bcd_to_7seg..
+Finding unused cells or wires in module \bcd_mod12_counter..
+Finding unused cells or wires in module \bcd_mod60_counter..
+Finding unused cells or wires in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+Finding unused cells or wires in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+Removed 14 unused cells and 125 unused wires.
+<suppressed ~21 debug messages>
+
+10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+<suppressed ~1 debug messages>
+Optimizing module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+Optimizing module bcd_mod12_counter.
+<suppressed ~3 debug messages>
+Optimizing module bcd_mod60_counter.
+<suppressed ~3 debug messages>
+Optimizing module bcd_to_7seg.
+Optimizing module jam_digital_top.
+Optimizing module seven_seg_mux6.
+
+10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \bcd_mod12_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bcd_mod60_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bcd_to_7seg..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \jam_digital_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \seven_seg_mux6..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~52 debug messages>
+
+10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+  Optimizing cells in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+  Optimizing cells in module \bcd_mod12_counter.
+  Optimizing cells in module \bcd_mod60_counter.
+  Optimizing cells in module \bcd_to_7seg.
+  Optimizing cells in module \jam_digital_top.
+  Optimizing cells in module \seven_seg_mux6.
+Performed a total of 0 changes.
+
+10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Computing hashes of 21 cells of `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding duplicate cells in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding identical cells in module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Computing hashes of 5 cells of `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding duplicate cells in `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\bcd_mod12_counter'.
+Computing hashes of 36 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Computing hashes of 35 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\bcd_mod60_counter'.
+Computing hashes of 23 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+Computing hashes of 22 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\bcd_to_7seg'.
+Computing hashes of 2 cells of `\bcd_to_7seg'.
+Finding duplicate cells in `\bcd_to_7seg'.
+Finding identical cells in module `\jam_digital_top'.
+Computing hashes of 11 cells of `\jam_digital_top'.
+Finding duplicate cells in `\jam_digital_top'.
+Finding identical cells in module `\seven_seg_mux6'.
+Computing hashes of 14 cells of `\seven_seg_mux6'.
+Finding duplicate cells in `\seven_seg_mux6'.
+Removed a total of 2 cells.
+
+10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+Finding unused cells or wires in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \bcd_mod12_counter..
+Finding unused cells or wires in module \bcd_mod60_counter..
+Finding unused cells or wires in module \bcd_to_7seg..
+Finding unused cells or wires in module \jam_digital_top..
+Finding unused cells or wires in module \seven_seg_mux6..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~2 debug messages>
+
+10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+Optimizing module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+Optimizing module bcd_mod12_counter.
+Optimizing module bcd_mod60_counter.
+Optimizing module bcd_to_7seg.
+Optimizing module jam_digital_top.
+Optimizing module seven_seg_mux6.
+
+10.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \bcd_mod12_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bcd_mod60_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bcd_to_7seg..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \jam_digital_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \seven_seg_mux6..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~52 debug messages>
+
+10.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+  Optimizing cells in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+  Optimizing cells in module \bcd_mod12_counter.
+  Optimizing cells in module \bcd_mod60_counter.
+  Optimizing cells in module \bcd_to_7seg.
+  Optimizing cells in module \jam_digital_top.
+  Optimizing cells in module \seven_seg_mux6.
+Performed a total of 0 changes.
+
+10.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Computing hashes of 21 cells of `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding duplicate cells in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding identical cells in module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Computing hashes of 5 cells of `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding duplicate cells in `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\bcd_mod12_counter'.
+Computing hashes of 35 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Finding identical cells in module `\bcd_mod60_counter'.
+Computing hashes of 22 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+Finding identical cells in module `\bcd_to_7seg'.
+Computing hashes of 2 cells of `\bcd_to_7seg'.
+Finding duplicate cells in `\bcd_to_7seg'.
+Finding identical cells in module `\jam_digital_top'.
+Computing hashes of 11 cells of `\jam_digital_top'.
+Finding duplicate cells in `\jam_digital_top'.
+Finding identical cells in module `\seven_seg_mux6'.
+Computing hashes of 14 cells of `\seven_seg_mux6'.
+Finding duplicate cells in `\seven_seg_mux6'.
+Removed a total of 0 cells.
+
+10.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+Finding unused cells or wires in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \bcd_mod12_counter..
+Finding unused cells or wires in module \bcd_mod60_counter..
+Finding unused cells or wires in module \bcd_to_7seg..
+Finding unused cells or wires in module \jam_digital_top..
+Finding unused cells or wires in module \seven_seg_mux6..
+
+10.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+Optimizing module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+Optimizing module bcd_mod12_counter.
+Optimizing module bcd_mod60_counter.
+Optimizing module bcd_to_7seg.
+Optimizing module jam_digital_top.
+Optimizing module seven_seg_mux6.
+
+10.23. Finished fast OPT passes. (There is nothing left to do.)
+
+11. Executing FSM pass (extract and optimize FSM).
+
+11.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking seven_seg_mux6.digit_sel_o as FSM state register:
+    Register is connected to module port.
+    Users of register don't seem to benefit from recoding.
+
+11.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+11.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+Finding unused cells or wires in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \bcd_mod12_counter..
+Finding unused cells or wires in module \bcd_mod60_counter..
+Finding unused cells or wires in module \bcd_to_7seg..
+Finding unused cells or wires in module \jam_digital_top..
+Finding unused cells or wires in module \seven_seg_mux6..
+
+11.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+11.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+11.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+11.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+12. Executing OPT pass (performing simple optimizations).
+
+12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+Optimizing module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+Optimizing module bcd_mod12_counter.
+Optimizing module bcd_mod60_counter.
+Optimizing module bcd_to_7seg.
+Optimizing module jam_digital_top.
+Optimizing module seven_seg_mux6.
+
+12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Computing hashes of 21 cells of `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding duplicate cells in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding identical cells in module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Computing hashes of 5 cells of `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding duplicate cells in `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\bcd_mod12_counter'.
+Computing hashes of 35 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Finding identical cells in module `\bcd_mod60_counter'.
+Computing hashes of 22 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+Finding identical cells in module `\bcd_to_7seg'.
+Computing hashes of 2 cells of `\bcd_to_7seg'.
+Finding duplicate cells in `\bcd_to_7seg'.
+Finding identical cells in module `\jam_digital_top'.
+Computing hashes of 11 cells of `\jam_digital_top'.
+Finding duplicate cells in `\jam_digital_top'.
+Finding identical cells in module `\seven_seg_mux6'.
+Computing hashes of 14 cells of `\seven_seg_mux6'.
+Finding duplicate cells in `\seven_seg_mux6'.
+Removed a total of 0 cells.
+
+12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \bcd_mod12_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bcd_mod60_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bcd_to_7seg..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \jam_digital_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \seven_seg_mux6..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~52 debug messages>
+
+12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+  Optimizing cells in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+  Optimizing cells in module \bcd_mod12_counter.
+  Optimizing cells in module \bcd_mod60_counter.
+  Optimizing cells in module \bcd_to_7seg.
+  Optimizing cells in module \jam_digital_top.
+  Optimizing cells in module \seven_seg_mux6.
+Performed a total of 0 changes.
+
+12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Computing hashes of 21 cells of `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding duplicate cells in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding identical cells in module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Computing hashes of 5 cells of `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding duplicate cells in `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\bcd_mod12_counter'.
+Computing hashes of 35 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Finding identical cells in module `\bcd_mod60_counter'.
+Computing hashes of 22 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+Finding identical cells in module `\bcd_to_7seg'.
+Computing hashes of 2 cells of `\bcd_to_7seg'.
+Finding duplicate cells in `\bcd_to_7seg'.
+Finding identical cells in module `\jam_digital_top'.
+Computing hashes of 11 cells of `\jam_digital_top'.
+Finding duplicate cells in `\jam_digital_top'.
+Finding identical cells in module `\seven_seg_mux6'.
+Computing hashes of 14 cells of `\seven_seg_mux6'.
+Finding duplicate cells in `\seven_seg_mux6'.
+Removed a total of 0 cells.
+
+12.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+Finding unused cells or wires in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \bcd_mod12_counter..
+Finding unused cells or wires in module \bcd_mod60_counter..
+Finding unused cells or wires in module \bcd_to_7seg..
+Finding unused cells or wires in module \jam_digital_top..
+Finding unused cells or wires in module \seven_seg_mux6..
+
+12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+Optimizing module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+Optimizing module bcd_mod12_counter.
+Optimizing module bcd_mod60_counter.
+Optimizing module bcd_to_7seg.
+Optimizing module jam_digital_top.
+Optimizing module seven_seg_mux6.
+
+12.9. Finished fast OPT passes. (There is nothing left to do.)
+
+13. Executing MEMORY pass.
+
+13.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+13.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+13.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+13.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+13.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `$auto$proc_rom.cc:155:do_switch$70'[0] in module `\bcd_to_7seg': no output FF found.
+Checking read port address `$auto$proc_rom.cc:155:do_switch$70'[0] in module `\bcd_to_7seg': no address FF found.
+
+13.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+Finding unused cells or wires in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \bcd_mod12_counter..
+Finding unused cells or wires in module \bcd_mod60_counter..
+Finding unused cells or wires in module \bcd_to_7seg..
+Finding unused cells or wires in module \jam_digital_top..
+Finding unused cells or wires in module \seven_seg_mux6..
+
+13.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+13.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+13.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+Finding unused cells or wires in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \bcd_mod12_counter..
+Finding unused cells or wires in module \bcd_mod60_counter..
+Finding unused cells or wires in module \bcd_to_7seg..
+Finding unused cells or wires in module \jam_digital_top..
+Finding unused cells or wires in module \seven_seg_mux6..
+
+13.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+13.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory $auto$proc_rom.cc:155:do_switch$70 in module \bcd_to_7seg:
+  created 16 $dff cells and 0 static cells of width 7.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 0 write mux blocks.
+
+14. Executing OPT pass (performing simple optimizations).
+
+14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+Optimizing module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+Optimizing module bcd_mod12_counter.
+Optimizing module bcd_mod60_counter.
+Optimizing module bcd_to_7seg.
+<suppressed ~4 debug messages>
+Optimizing module jam_digital_top.
+Optimizing module seven_seg_mux6.
+
+14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Computing hashes of 21 cells of `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding duplicate cells in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding identical cells in module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Computing hashes of 5 cells of `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding duplicate cells in `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\bcd_mod12_counter'.
+Computing hashes of 35 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Finding identical cells in module `\bcd_mod60_counter'.
+Computing hashes of 22 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+Finding identical cells in module `\bcd_to_7seg'.
+Computing hashes of 11 cells of `\bcd_to_7seg'.
+Finding duplicate cells in `\bcd_to_7seg'.
+Finding identical cells in module `\jam_digital_top'.
+Computing hashes of 11 cells of `\jam_digital_top'.
+Finding duplicate cells in `\jam_digital_top'.
+Finding identical cells in module `\seven_seg_mux6'.
+Computing hashes of 14 cells of `\seven_seg_mux6'.
+Finding duplicate cells in `\seven_seg_mux6'.
+Removed a total of 0 cells.
+
+14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \bcd_mod12_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bcd_mod60_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bcd_to_7seg..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \jam_digital_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \seven_seg_mux6..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~64 debug messages>
+
+14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+  Optimizing cells in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+  Optimizing cells in module \bcd_mod12_counter.
+  Optimizing cells in module \bcd_mod60_counter.
+  Optimizing cells in module \bcd_to_7seg.
+  Optimizing cells in module \jam_digital_top.
+  Optimizing cells in module \seven_seg_mux6.
+Performed a total of 0 changes.
+
+14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Computing hashes of 21 cells of `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding duplicate cells in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding identical cells in module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Computing hashes of 5 cells of `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding duplicate cells in `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\bcd_mod12_counter'.
+Computing hashes of 35 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Finding identical cells in module `\bcd_mod60_counter'.
+Computing hashes of 22 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+Finding identical cells in module `\bcd_to_7seg'.
+Computing hashes of 11 cells of `\bcd_to_7seg'.
+Finding duplicate cells in `\bcd_to_7seg'.
+Finding identical cells in module `\jam_digital_top'.
+Computing hashes of 11 cells of `\jam_digital_top'.
+Finding duplicate cells in `\jam_digital_top'.
+Finding identical cells in module `\seven_seg_mux6'.
+Computing hashes of 14 cells of `\seven_seg_mux6'.
+Finding duplicate cells in `\seven_seg_mux6'.
+Removed a total of 0 cells.
+
+14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+Finding unused cells or wires in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \bcd_mod12_counter..
+Finding unused cells or wires in module \bcd_mod60_counter..
+Finding unused cells or wires in module \bcd_to_7seg..
+Finding unused cells or wires in module \jam_digital_top..
+Finding unused cells or wires in module \seven_seg_mux6..
+Removed 0 unused cells and 20 unused wires.
+<suppressed ~1 debug messages>
+
+14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+Optimizing module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+Optimizing module bcd_mod12_counter.
+Optimizing module bcd_mod60_counter.
+Optimizing module bcd_to_7seg.
+Optimizing module jam_digital_top.
+Optimizing module seven_seg_mux6.
+
+14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \bcd_mod12_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bcd_mod60_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bcd_to_7seg..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \jam_digital_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \seven_seg_mux6..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~64 debug messages>
+
+14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+  Optimizing cells in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+  Optimizing cells in module \bcd_mod12_counter.
+  Optimizing cells in module \bcd_mod60_counter.
+  Optimizing cells in module \bcd_to_7seg.
+  Optimizing cells in module \jam_digital_top.
+  Optimizing cells in module \seven_seg_mux6.
+Performed a total of 0 changes.
+
+14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Computing hashes of 21 cells of `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding duplicate cells in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding identical cells in module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Computing hashes of 5 cells of `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding duplicate cells in `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\bcd_mod12_counter'.
+Computing hashes of 35 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Finding identical cells in module `\bcd_mod60_counter'.
+Computing hashes of 22 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+Finding identical cells in module `\bcd_to_7seg'.
+Computing hashes of 11 cells of `\bcd_to_7seg'.
+Finding duplicate cells in `\bcd_to_7seg'.
+Finding identical cells in module `\jam_digital_top'.
+Computing hashes of 11 cells of `\jam_digital_top'.
+Finding duplicate cells in `\jam_digital_top'.
+Finding identical cells in module `\seven_seg_mux6'.
+Computing hashes of 14 cells of `\seven_seg_mux6'.
+Finding duplicate cells in `\seven_seg_mux6'.
+Removed a total of 0 cells.
+
+14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+Finding unused cells or wires in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \bcd_mod12_counter..
+Finding unused cells or wires in module \bcd_mod60_counter..
+Finding unused cells or wires in module \bcd_to_7seg..
+Finding unused cells or wires in module \jam_digital_top..
+Finding unused cells or wires in module \seven_seg_mux6..
+
+14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+Optimizing module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+Optimizing module bcd_mod12_counter.
+Optimizing module bcd_mod60_counter.
+Optimizing module bcd_to_7seg.
+Optimizing module jam_digital_top.
+Optimizing module seven_seg_mux6.
+
+14.16. Finished fast OPT passes. (There is nothing left to do.)
+
+15. Executing TECHMAP pass (map to technology primitives).
+
+15.1. Executing Verilog-2005 frontend: /nix/store/f1q0w7rd0a4ny4hqvfxlhs4cmariidcy-yosys-0.62/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/f1q0w7rd0a4ny4hqvfxlhs4cmariidcy-yosys-0.62/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+15.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $adffe.
+Running "alumacc" on wrapper $extern:wrap:$add:A_SIGNED=0:A_WIDTH=3:B_SIGNED=0:B_WIDTH=3:Y_WIDTH=3:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:A_SIGNED=0:A_WIDTH=3:B_SIGNED=0:B_WIDTH=3:Y_WIDTH=3:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:A_SIGNED=0:A_WIDTH=3:B_SIGNED=0:B_WIDTH=3:Y_WIDTH=3:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $mux.
+Using template $paramod$90ef9d3919151a0ff7c15c5c14550fb560f421a1\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$a13703aa027da371a1931fc542d213d7de559b19\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $adff.
+Using template $paramod$78e969f2586efcf3a5b0b0440bcca0db83d5cca2\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000011 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $reduce_bool.
+Running "alumacc" on wrapper $extern:wrap:$gt:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$gt:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$gt:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$add:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=4:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=4:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=4:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $paramod$740b056ede97228d3eae64ea2fdc81f0a33e0fe7\_90_alu for cells of type $alu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000100 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Running "alumacc" on wrapper $extern:wrap:$ge:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$add:A_SIGNED=0:A_WIDTH=26:B_SIGNED=0:B_WIDTH=26:Y_WIDTH=26:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:A_SIGNED=0:A_WIDTH=26:B_SIGNED=0:B_WIDTH=26:Y_WIDTH=26:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:A_SIGNED=0:A_WIDTH=26:B_SIGNED=0:B_WIDTH=26:Y_WIDTH=26:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$add:A_SIGNED=0:A_WIDTH=16:B_SIGNED=0:B_WIDTH=16:Y_WIDTH=16:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:A_SIGNED=0:A_WIDTH=16:B_SIGNED=0:B_WIDTH=16:Y_WIDTH=16:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:A_SIGNED=0:A_WIDTH=16:B_SIGNED=0:B_WIDTH=16:Y_WIDTH=16:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $paramod$7af98a8d3d01ff58dee4212ab52569c379e064a1\_90_alu for cells of type $alu.
+Using template $paramod$6df0329addda9228fcc2546de2aaf14ad26c98e1\_90_alu for cells of type $alu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000011010 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011010 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010000 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~1359 debug messages>
+
+16. Executing OPT pass (performing simple optimizations).
+
+16.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+<suppressed ~488 debug messages>
+Optimizing module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+Optimizing module bcd_mod12_counter.
+<suppressed ~159 debug messages>
+Optimizing module bcd_mod60_counter.
+<suppressed ~166 debug messages>
+Optimizing module bcd_to_7seg.
+<suppressed ~27 debug messages>
+Optimizing module jam_digital_top.
+Optimizing module seven_seg_mux6.
+<suppressed ~99 debug messages>
+
+16.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Computing hashes of 369 cells of `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding duplicate cells in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Computing hashes of 365 cells of `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding duplicate cells in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+<suppressed ~12 debug messages>
+Finding identical cells in module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Computing hashes of 15 cells of `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding duplicate cells in `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\bcd_mod12_counter'.
+Computing hashes of 159 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Computing hashes of 145 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Computing hashes of 140 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Computing hashes of 137 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Computing hashes of 133 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Computing hashes of 130 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+<suppressed ~87 debug messages>
+Finding identical cells in module `\bcd_mod60_counter'.
+Computing hashes of 119 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+Computing hashes of 113 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+<suppressed ~18 debug messages>
+Finding identical cells in module `\bcd_to_7seg'.
+Computing hashes of 50 cells of `\bcd_to_7seg'.
+Finding duplicate cells in `\bcd_to_7seg'.
+Computing hashes of 35 cells of `\bcd_to_7seg'.
+Finding duplicate cells in `\bcd_to_7seg'.
+Computing hashes of 27 cells of `\bcd_to_7seg'.
+Finding duplicate cells in `\bcd_to_7seg'.
+<suppressed ~69 debug messages>
+Finding identical cells in module `\jam_digital_top'.
+Computing hashes of 11 cells of `\jam_digital_top'.
+Finding duplicate cells in `\jam_digital_top'.
+Finding identical cells in module `\seven_seg_mux6'.
+Computing hashes of 113 cells of `\seven_seg_mux6'.
+Finding duplicate cells in `\seven_seg_mux6'.
+Computing hashes of 105 cells of `\seven_seg_mux6'.
+Finding duplicate cells in `\seven_seg_mux6'.
+Computing hashes of 103 cells of `\seven_seg_mux6'.
+Finding duplicate cells in `\seven_seg_mux6'.
+<suppressed ~30 debug messages>
+Removed a total of 72 cells.
+
+16.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \bcd_mod12_counter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \bcd_mod60_counter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \bcd_to_7seg..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \jam_digital_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \seven_seg_mux6..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+16.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+  Optimizing cells in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+  Optimizing cells in module \bcd_mod12_counter.
+  Optimizing cells in module \bcd_mod60_counter.
+  Optimizing cells in module \bcd_to_7seg.
+  Optimizing cells in module \jam_digital_top.
+  Optimizing cells in module \seven_seg_mux6.
+Performed a total of 0 changes.
+
+16.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Computing hashes of 365 cells of `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding duplicate cells in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding identical cells in module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Computing hashes of 15 cells of `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding duplicate cells in `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\bcd_mod12_counter'.
+Computing hashes of 130 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Finding identical cells in module `\bcd_mod60_counter'.
+Computing hashes of 113 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+Finding identical cells in module `\bcd_to_7seg'.
+Computing hashes of 27 cells of `\bcd_to_7seg'.
+Finding duplicate cells in `\bcd_to_7seg'.
+Finding identical cells in module `\jam_digital_top'.
+Computing hashes of 11 cells of `\jam_digital_top'.
+Finding duplicate cells in `\jam_digital_top'.
+Finding identical cells in module `\seven_seg_mux6'.
+Computing hashes of 103 cells of `\seven_seg_mux6'.
+Finding duplicate cells in `\seven_seg_mux6'.
+Removed a total of 0 cells.
+
+16.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+Finding unused cells or wires in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \bcd_mod12_counter..
+Finding unused cells or wires in module \bcd_mod60_counter..
+Finding unused cells or wires in module \bcd_to_7seg..
+Finding unused cells or wires in module \jam_digital_top..
+Finding unused cells or wires in module \seven_seg_mux6..
+Removed 41 unused cells and 785 unused wires.
+<suppressed ~46 debug messages>
+
+16.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+Optimizing module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+Optimizing module bcd_mod12_counter.
+<suppressed ~1 debug messages>
+Optimizing module bcd_mod60_counter.
+Optimizing module bcd_to_7seg.
+<suppressed ~1 debug messages>
+Optimizing module jam_digital_top.
+Optimizing module seven_seg_mux6.
+
+16.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+16.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \bcd_mod12_counter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \bcd_mod60_counter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \bcd_to_7seg..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \jam_digital_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \seven_seg_mux6..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+16.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+  Optimizing cells in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+  Optimizing cells in module \bcd_mod12_counter.
+  Optimizing cells in module \bcd_mod60_counter.
+  Optimizing cells in module \bcd_to_7seg.
+  Optimizing cells in module \jam_digital_top.
+  Optimizing cells in module \seven_seg_mux6.
+Performed a total of 0 changes.
+
+16.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Computing hashes of 359 cells of `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding duplicate cells in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding identical cells in module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Computing hashes of 15 cells of `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding duplicate cells in `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\bcd_mod12_counter'.
+Computing hashes of 112 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Finding identical cells in module `\bcd_mod60_counter'.
+Computing hashes of 96 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+Finding identical cells in module `\bcd_to_7seg'.
+Computing hashes of 26 cells of `\bcd_to_7seg'.
+Finding duplicate cells in `\bcd_to_7seg'.
+Finding identical cells in module `\jam_digital_top'.
+Computing hashes of 11 cells of `\jam_digital_top'.
+Finding duplicate cells in `\jam_digital_top'.
+Finding identical cells in module `\seven_seg_mux6'.
+Computing hashes of 102 cells of `\seven_seg_mux6'.
+Finding duplicate cells in `\seven_seg_mux6'.
+Removed a total of 0 cells.
+
+16.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+Finding unused cells or wires in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \bcd_mod12_counter..
+Finding unused cells or wires in module \bcd_mod60_counter..
+Finding unused cells or wires in module \bcd_to_7seg..
+Finding unused cells or wires in module \jam_digital_top..
+Finding unused cells or wires in module \seven_seg_mux6..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+16.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+Optimizing module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+Optimizing module bcd_mod12_counter.
+Optimizing module bcd_mod60_counter.
+Optimizing module bcd_to_7seg.
+Optimizing module jam_digital_top.
+Optimizing module seven_seg_mux6.
+
+16.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+16.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \bcd_mod12_counter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \bcd_mod60_counter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \bcd_to_7seg..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \jam_digital_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \seven_seg_mux6..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+16.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+  Optimizing cells in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+  Optimizing cells in module \bcd_mod12_counter.
+  Optimizing cells in module \bcd_mod60_counter.
+  Optimizing cells in module \bcd_to_7seg.
+  Optimizing cells in module \jam_digital_top.
+  Optimizing cells in module \seven_seg_mux6.
+Performed a total of 0 changes.
+
+16.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Computing hashes of 359 cells of `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding duplicate cells in `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Finding identical cells in module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Computing hashes of 15 cells of `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding duplicate cells in `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\bcd_mod12_counter'.
+Computing hashes of 112 cells of `\bcd_mod12_counter'.
+Finding duplicate cells in `\bcd_mod12_counter'.
+Finding identical cells in module `\bcd_mod60_counter'.
+Computing hashes of 96 cells of `\bcd_mod60_counter'.
+Finding duplicate cells in `\bcd_mod60_counter'.
+Finding identical cells in module `\bcd_to_7seg'.
+Computing hashes of 26 cells of `\bcd_to_7seg'.
+Finding duplicate cells in `\bcd_to_7seg'.
+Finding identical cells in module `\jam_digital_top'.
+Computing hashes of 11 cells of `\jam_digital_top'.
+Finding duplicate cells in `\jam_digital_top'.
+Finding identical cells in module `\seven_seg_mux6'.
+Computing hashes of 102 cells of `\seven_seg_mux6'.
+Finding duplicate cells in `\seven_seg_mux6'.
+Removed a total of 0 cells.
+
+16.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider..
+Finding unused cells or wires in module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \bcd_mod12_counter..
+Finding unused cells or wires in module \bcd_mod60_counter..
+Finding unused cells or wires in module \bcd_to_7seg..
+Finding unused cells or wires in module \jam_digital_top..
+Finding unused cells or wires in module \seven_seg_mux6..
+
+16.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider.
+Optimizing module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011.
+Optimizing module bcd_mod12_counter.
+Optimizing module bcd_mod60_counter.
+Optimizing module bcd_to_7seg.
+Optimizing module jam_digital_top.
+Optimizing module seven_seg_mux6.
+
+16.23. Finished fast OPT passes. (There is nothing left to do.)
+
+17. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider...
+Checking module $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011...
+Checking module bcd_mod12_counter...
+Checking module bcd_mod60_counter...
+Checking module bcd_to_7seg...
+Checking module jam_digital_top...
+Checking module seven_seg_mux6...
+Found and reported 0 problems.
+
+18. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_1 (noninv, pins=3, area=20.02) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtn_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_NN0_.
+  cell sky130_fd_sc_hd__dfrtp_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__edfxtp_1 (noninv, pins=4, area=30.03) is a direct match for cell type $_DFFE_PP_.
+  cell sky130_fd_sc_hd__dfbbn_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_NNN_.
+  cell sky130_fd_sc_hd__dfbbp_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_PNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    \sky130_fd_sc_hd__dfrtn_1 _DFF_NN0_ (.CLK_N( C), .D( D), .Q( Q), .RESET_B( R));
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    \sky130_fd_sc_hd__edfxtp_1 _DFFE_PP_ (.CLK( C), .D( D), .DE( E), .Q( Q));
+    \sky130_fd_sc_hd__dfbbn_1 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \sky130_fd_sc_hd__dfbbp_1 _DFFSR_PNN_ (.CLK( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+18.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+<suppressed ~24 debug messages>
+Mapping DFF cells in module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider':
+  mapped 44 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
+Mapping DFF cells in module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011':
+  mapped 9 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
+Mapping DFF cells in module `\bcd_mod12_counter':
+  mapped 8 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
+Mapping DFF cells in module `\bcd_mod60_counter':
+  mapped 8 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
+Mapping DFF cells in module `\bcd_to_7seg':
+Mapping DFF cells in module `\jam_digital_top':
+Mapping DFF cells in module `\seven_seg_mux6':
+  mapped 9 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
+  mapped 7 $_DFF_PN1_ cells to \sky130_fd_sc_hd__dfstp_2 cells.
+
+19. Executing ABC pass (technology mapping using ABC).
+
+19.1. Extracting gate netlist of module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider' to `<abc-temp-dir>/input.blif'..
+Replacing 26 occurrences of constant undef bits with constant zero bits
+
+19.1.1. Executed ABC.
+Extracted 341 gates and 389 wires to a netlist network with 45 inputs and 44 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.05 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__diode_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_0".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_bleeder_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__lpflow_inputisolatch_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.07 sec
+ABC: Memory =   19.85 MB. Time =     0.07 sec
+ABC: Warning: Detected 9 multi-output cells (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+19.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a21o_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:       20
+ABC RESULTS:   sky130_fd_sc_hd__a22o_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a22oi_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a311oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a31o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a32o_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a41oi_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__and2_0 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__and3_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__and4_1 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:        9
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand3_1 cells:        9
+ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nand4b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:       21
+ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor4_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nor4b_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o21a_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o22ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o32ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or3_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:        2
+ABC RESULTS:        internal signals:      300
+ABC RESULTS:           input signals:       45
+ABC RESULTS:          output signals:       44
+Removing temp directory.
+
+19.2. Extracting gate netlist of module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011' to `<abc-temp-dir>/input.blif'..
+
+19.2.1. Executed ABC.
+Extracted 6 gates and 12 wires to a netlist network with 6 inputs and 3 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.05 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__diode_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_0".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_bleeder_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__lpflow_inputisolatch_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.08 sec
+ABC: Memory =   19.85 MB. Time =     0.08 sec
+ABC: Warning: Detected 9 multi-output cells (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+19.2.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:        3
+ABC RESULTS:        internal signals:        3
+ABC RESULTS:           input signals:        6
+ABC RESULTS:          output signals:        3
+Removing temp directory.
+
+19.3. Extracting gate netlist of module `\bcd_mod12_counter' to `<abc-temp-dir>/input.blif'..
+Replacing 8 occurrences of constant undef bits with constant zero bits
+
+19.3.1. Executed ABC.
+Extracted 111 gates and 131 wires to a netlist network with 17 inputs and 8 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.05 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__diode_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_0".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_bleeder_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__lpflow_inputisolatch_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.08 sec
+ABC: Memory =   19.85 MB. Time =     0.08 sec
+ABC: Warning: Detected 9 multi-output cells (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+19.3.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a211oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a221o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a32oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a41o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nand3_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand4b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor4_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o32a_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or4b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:        3
+ABC RESULTS:        internal signals:      106
+ABC RESULTS:           input signals:       17
+ABC RESULTS:          output signals:        8
+Removing temp directory.
+
+19.4. Extracting gate netlist of module `\bcd_mod60_counter' to `<abc-temp-dir>/input.blif'..
+Replacing 12 occurrences of constant undef bits with constant zero bits
+
+19.4.1. Executed ABC.
+Extracted 96 gates and 117 wires to a netlist network with 18 inputs and 9 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.05 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__diode_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_0".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_bleeder_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__lpflow_inputisolatch_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.08 sec
+ABC: Memory =   19.85 MB. Time =     0.08 sec
+ABC: Warning: Detected 9 multi-output cells (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+19.4.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a211o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a221o_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a311o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a311oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a41o_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a41oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and3_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand4b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand4bb_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor4bb_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o21a_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o22ai_1 cells:        1
+ABC RESULTS:        internal signals:       90
+ABC RESULTS:           input signals:       18
+ABC RESULTS:          output signals:        9
+Removing temp directory.
+
+19.5. Extracting gate netlist of module `\bcd_to_7seg' to `<abc-temp-dir>/input.blif'..
+
+19.5.1. Executed ABC.
+Extracted 26 gates and 32 wires to a netlist network with 4 inputs and 7 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.05 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__diode_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_0".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_bleeder_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__lpflow_inputisolatch_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.08 sec
+ABC: Memory =   19.85 MB. Time =     0.08 sec
+ABC: Warning: Detected 9 multi-output cells (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+19.5.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:        2
+ABC RESULTS:        internal signals:       21
+ABC RESULTS:           input signals:        4
+ABC RESULTS:          output signals:        7
+Removing temp directory.
+
+19.6. Extracting gate netlist of module `\jam_digital_top' to `<abc-temp-dir>/input.blif'..
+
+19.6.1. Executed ABC.
+Extracted 5 gates and 11 wires to a netlist network with 6 inputs and 3 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.05 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__diode_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_0".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_bleeder_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__lpflow_inputisolatch_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.08 sec
+ABC: Memory =   19.85 MB. Time =     0.08 sec
+ABC: Warning: Detected 9 multi-output cells (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+19.6.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a21o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a31o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_inputiso1p_1 cells:        1
+ABC RESULTS:        internal signals:        2
+ABC RESULTS:           input signals:        6
+ABC RESULTS:          output signals:        3
+Removing temp directory.
+
+19.7. Extracting gate netlist of module `\seven_seg_mux6' to `<abc-temp-dir>/input.blif'..
+
+19.7.1. Executed ABC.
+Extracted 88 gates and 117 wires to a netlist network with 28 inputs and 13 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.05 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__diode_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_0".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_bleeder_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__lpflow_inputisolatch_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/yokemikal/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.08 sec
+ABC: Memory =   19.85 MB. Time =     0.08 sec
+ABC: Warning: Detected 9 multi-output cells (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+19.7.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a21o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a222oi_1 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__a22o_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__and3b_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:        1
+ABC RESULTS:        internal signals:       76
+ABC RESULTS:           input signals:       28
+ABC RESULTS:          output signals:       13
+Removing temp directory.
+Removing global temp directory.
+Removed 0 unused cells and 437 unused wires.
+
+20. Printing statistics.
+
+=== $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      148        - wires
+      203        - wire bits
+        9        - public wires
+       49        - public wire bits
+        7        - ports
+        7        - port bits
+      198  2001.92 cells
+        3   22.522   sky130_fd_sc_hd__a21o_1
+       20  100.096   sky130_fd_sc_hd__a21oi_1
+        3   26.275   sky130_fd_sc_hd__a22o_1
+        5   37.536   sky130_fd_sc_hd__a22oi_1
+        1    8.758   sky130_fd_sc_hd__a311oi_1
+        1    8.758   sky130_fd_sc_hd__a31o_1
+        3   18.768   sky130_fd_sc_hd__a31oi_1
+        2   20.019   sky130_fd_sc_hd__a32o_1
+        2   17.517   sky130_fd_sc_hd__a41oi_1
+        3   18.768   sky130_fd_sc_hd__and2_0
+        4   25.024   sky130_fd_sc_hd__and3_1
+        8   70.067   sky130_fd_sc_hd__and4_1
+        6   22.522   sky130_fd_sc_hd__clkinv_1
+       44  1.1E+03   sky130_fd_sc_hd__dfrtp_1
+        1    6.256   sky130_fd_sc_hd__lpflow_isobufsrc_1
+        9   33.782   sky130_fd_sc_hd__nand2_1
+        2   12.512   sky130_fd_sc_hd__nand2b_1
+        9   45.043   sky130_fd_sc_hd__nand3_1
+        5    31.28   sky130_fd_sc_hd__nand4_1
+        1    8.758   sky130_fd_sc_hd__nand4b_1
+       21   78.826   sky130_fd_sc_hd__nor2_1
+       11   55.053   sky130_fd_sc_hd__nor3_1
+        1    7.507   sky130_fd_sc_hd__nor3b_1
+        3   18.768   sky130_fd_sc_hd__nor4_1
+        3   26.275   sky130_fd_sc_hd__nor4b_1
+        2   15.014   sky130_fd_sc_hd__o21a_1
+       11   55.053   sky130_fd_sc_hd__o21ai_0
+        4   30.029   sky130_fd_sc_hd__o21bai_1
+        1    6.256   sky130_fd_sc_hd__o22ai_1
+        2   15.014   sky130_fd_sc_hd__o31ai_1
+        1    8.758   sky130_fd_sc_hd__o32ai_1
+        1    6.256   sky130_fd_sc_hd__or3_1
+        3   26.275   sky130_fd_sc_hd__xnor2_1
+        2   17.517   sky130_fd_sc_hd__xor2_1
+
+   Chip area for module '$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider': 2001.920000
+     of which used for sequential elements: 1101.056000 (55.00%)
+
+=== $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011 ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        7        - wires
+       17        - wire bits
+        7        - public wires
+       17        - public wire bits
+        4        - ports
+        8        - port bits
+       12  243.984 cells
+        9  225.216   sky130_fd_sc_hd__dfrtp_1
+        3   18.768   sky130_fd_sc_hd__lpflow_isobufsrc_1
+
+   Chip area for module '$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011': 243.984000
+     of which used for sequential elements: 225.216000 (92.31%)
+
+=== bcd_mod12_counter ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       48        - wires
+       63        - wire bits
+       11        - public wires
+       26        - public wire bits
+       10        - ports
+       22        - port bits
+       45  435.418 cells
+        1    7.507   sky130_fd_sc_hd__a211oi_1
+        1    5.005   sky130_fd_sc_hd__a21oi_1
+        1    10.01   sky130_fd_sc_hd__a221o_1
+        1    6.256   sky130_fd_sc_hd__a31oi_1
+        1    8.758   sky130_fd_sc_hd__a32oi_1
+        1    10.01   sky130_fd_sc_hd__a41o_1
+        4   15.014   sky130_fd_sc_hd__clkinv_1
+        8  200.192   sky130_fd_sc_hd__dfrtp_1
+        1    6.256   sky130_fd_sc_hd__lpflow_isobufsrc_1
+        2    7.507   sky130_fd_sc_hd__nand2_1
+        3   18.768   sky130_fd_sc_hd__nand2b_1
+        1    5.005   sky130_fd_sc_hd__nand3_1
+        1    6.256   sky130_fd_sc_hd__nand4_1
+        1    8.758   sky130_fd_sc_hd__nand4b_1
+        2    7.507   sky130_fd_sc_hd__nor2_1
+        2    10.01   sky130_fd_sc_hd__nor3_1
+        1    7.507   sky130_fd_sc_hd__nor3b_1
+        1    6.256   sky130_fd_sc_hd__nor4_1
+        2   15.014   sky130_fd_sc_hd__o211ai_1
+        4   20.019   sky130_fd_sc_hd__o21ai_0
+        1    7.507   sky130_fd_sc_hd__o31ai_1
+        1    10.01   sky130_fd_sc_hd__o32a_1
+        1    10.01   sky130_fd_sc_hd__or4b_1
+        3   26.275   sky130_fd_sc_hd__xor2_1
+
+   Chip area for module '\bcd_mod12_counter': 435.417600
+     of which used for sequential elements: 200.192000 (45.98%)
+
+=== bcd_mod60_counter ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       49        - wires
+       61        - wire bits
+        9        - public wires
+       21        - public wire bits
+        9        - ports
+       21        - port bits
+       49  474.205 cells
+        1    8.758   sky130_fd_sc_hd__a211o_1
+        3   15.014   sky130_fd_sc_hd__a21oi_1
+        2   20.019   sky130_fd_sc_hd__a221o_1
+        1    10.01   sky130_fd_sc_hd__a311o_1
+        1    8.758   sky130_fd_sc_hd__a311oi_1
+        3   18.768   sky130_fd_sc_hd__a31oi_1
+        2   20.019   sky130_fd_sc_hd__a41o_1
+        1    8.758   sky130_fd_sc_hd__a41oi_1
+        2   12.512   sky130_fd_sc_hd__and3_1
+        1    3.754   sky130_fd_sc_hd__clkinv_1
+        8  200.192   sky130_fd_sc_hd__dfrtp_1
+        1    6.256   sky130_fd_sc_hd__lpflow_isobufsrc_1
+        5   18.768   sky130_fd_sc_hd__nand2_1
+        1    6.256   sky130_fd_sc_hd__nand4_1
+        1    8.758   sky130_fd_sc_hd__nand4b_1
+        2   22.522   sky130_fd_sc_hd__nand4bb_1
+        5   18.768   sky130_fd_sc_hd__nor2_1
+        1    7.507   sky130_fd_sc_hd__nor3b_1
+        2   20.019   sky130_fd_sc_hd__nor4bb_1
+        2   15.014   sky130_fd_sc_hd__o211ai_1
+        1    7.507   sky130_fd_sc_hd__o21a_1
+        2    10.01   sky130_fd_sc_hd__o21ai_0
+        1    6.256   sky130_fd_sc_hd__o22ai_1
+
+   Chip area for module '\bcd_mod60_counter': 474.204800
+     of which used for sequential elements: 200.192000 (42.22%)
+
+=== bcd_to_7seg ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       13        - wires
+       22        - wire bits
+        2        - public wires
+       11        - public wire bits
+        2        - ports
+       11        - port bits
+       18   92.589 cells
+        5   25.024   sky130_fd_sc_hd__a21oi_1
+        1    6.256   sky130_fd_sc_hd__a31oi_1
+        1    3.754   sky130_fd_sc_hd__clkinv_1
+        2   12.512   sky130_fd_sc_hd__lpflow_isobufsrc_1
+        2    7.507   sky130_fd_sc_hd__nand2_1
+        4   15.014   sky130_fd_sc_hd__nor2_1
+        1    5.005   sky130_fd_sc_hd__nor3_1
+        2   17.517   sky130_fd_sc_hd__xor2_1
+
+   Chip area for module '\bcd_to_7seg': 92.588800
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== jam_digital_top ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       36        - wires
+       85        - wire bits
+       36        - public wires
+       85        - public wire bits
+       25        - ports
+       72        - port bits
+        3   22.522 cells
+        1    7.507   sky130_fd_sc_hd__a21o_1
+        1    8.758   sky130_fd_sc_hd__a31o_1
+        1    6.256   sky130_fd_sc_hd__lpflow_inputiso1p_1
+        6        - submodules
+        1        -   $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider
+        1        -   $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011
+        1        -   bcd_mod12_counter
+        2        -   bcd_mod60_counter
+        1        -   seven_seg_mux6
+
+   Chip area for module '\jam_digital_top': 22.521600
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== seven_seg_mux6 ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       28        - wires
+       73        - wire bits
+       15        - public wires
+       60        - public wire bits
+       11        - ports
+       40        - port bits
+       39  586.813 cells
+        1    7.507   sky130_fd_sc_hd__a21o_1
+        8   80.077   sky130_fd_sc_hd__a222oi_1
+        2   17.517   sky130_fd_sc_hd__a22o_1
+        2   17.517   sky130_fd_sc_hd__and3b_1
+        9  225.216   sky130_fd_sc_hd__dfrtp_1
+        7  183.926   sky130_fd_sc_hd__dfstp_2
+        5   18.768   sky130_fd_sc_hd__nand2_1
+        1    5.005   sky130_fd_sc_hd__nor3_1
+        3   22.522   sky130_fd_sc_hd__nor3b_1
+        1    8.758   sky130_fd_sc_hd__xor2_1
+        1        - submodules
+        1        -   bcd_to_7seg
+
+   Chip area for module '\seven_seg_mux6': 586.812800
+     of which used for sequential elements: 409.142400 (69.72%)
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+      413 4.33E+03 jam_digital_top
+      198  2001.92 $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider
+       12  243.984 $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011
+       45  435.418 bcd_mod12_counter
+       49  474.205 bcd_mod60_counter
+       39  586.813 seven_seg_mux6
+       18   92.589   bcd_to_7seg
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+      378        - wires
+      585        - wire bits
+       98        - public wires
+      290        - public wire bits
+       77        - ports
+      202        - port bits
+        -        - memories
+        -        - memory bits
+        -        - processes
+      413 4.33E+03 cells
+        2   17.517   sky130_fd_sc_hd__a211o_1
+        1    7.507   sky130_fd_sc_hd__a211oi_1
+        5   37.536   sky130_fd_sc_hd__a21o_1
+       32  160.154   sky130_fd_sc_hd__a21oi_1
+        5   50.048   sky130_fd_sc_hd__a221o_1
+        8   80.077   sky130_fd_sc_hd__a222oi_1
+        5   43.792   sky130_fd_sc_hd__a22o_1
+        5   37.536   sky130_fd_sc_hd__a22oi_1
+        2   20.019   sky130_fd_sc_hd__a311o_1
+        3   26.275   sky130_fd_sc_hd__a311oi_1
+        2   17.517   sky130_fd_sc_hd__a31o_1
+       11   68.816   sky130_fd_sc_hd__a31oi_1
+        2   20.019   sky130_fd_sc_hd__a32o_1
+        1    8.758   sky130_fd_sc_hd__a32oi_1
+        5   50.048   sky130_fd_sc_hd__a41o_1
+        4   35.034   sky130_fd_sc_hd__a41oi_1
+        3   18.768   sky130_fd_sc_hd__and2_0
+        8   50.048   sky130_fd_sc_hd__and3_1
+        2   17.517   sky130_fd_sc_hd__and3b_1
+        8   70.067   sky130_fd_sc_hd__and4_1
+       13   48.797   sky130_fd_sc_hd__clkinv_1
+       86 2.15E+03   sky130_fd_sc_hd__dfrtp_1
+        7  183.926   sky130_fd_sc_hd__dfstp_2
+        1    6.256   sky130_fd_sc_hd__lpflow_inputiso1p_1
+        9   56.304   sky130_fd_sc_hd__lpflow_isobufsrc_1
+       28  105.101   sky130_fd_sc_hd__nand2_1
+        5    31.28   sky130_fd_sc_hd__nand2b_1
+       10   50.048   sky130_fd_sc_hd__nand3_1
+        8   50.048   sky130_fd_sc_hd__nand4_1
+        4   35.034   sky130_fd_sc_hd__nand4b_1
+        4   45.043   sky130_fd_sc_hd__nand4bb_1
+       37  138.883   sky130_fd_sc_hd__nor2_1
+       15   75.072   sky130_fd_sc_hd__nor3_1
+        7    52.55   sky130_fd_sc_hd__nor3b_1
+        4   25.024   sky130_fd_sc_hd__nor4_1
+        3   26.275   sky130_fd_sc_hd__nor4b_1
+        4   40.038   sky130_fd_sc_hd__nor4bb_1
+        6   45.043   sky130_fd_sc_hd__o211ai_1
+        4   30.029   sky130_fd_sc_hd__o21a_1
+       19   95.091   sky130_fd_sc_hd__o21ai_0
+        4   30.029   sky130_fd_sc_hd__o21bai_1
+        3   18.768   sky130_fd_sc_hd__o22ai_1
+        3   22.522   sky130_fd_sc_hd__o31ai_1
+        1    10.01   sky130_fd_sc_hd__o32a_1
+        1    8.758   sky130_fd_sc_hd__o32ai_1
+        1    6.256   sky130_fd_sc_hd__or3_1
+        1    10.01   sky130_fd_sc_hd__or4b_1
+        3   26.275   sky130_fd_sc_hd__xnor2_1
+        8   70.067   sky130_fd_sc_hd__xor2_1
+        6 4.31E+03 submodules
+        1  2001.92   $paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider
+        1  243.984   $paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011
+        1  435.418   bcd_mod12_counter
+        2   948.41   bcd_mod60_counter
+        1  679.402   seven_seg_mux6
+
+   Chip area for top module '\jam_digital_top': 4331.654400
+     of which used for sequential elements: 2335.990400 (53.93%)
+
+21. Executing Verilog backend.
+
+21.1. Executing BMUXMAP pass.
+
+21.2. Executing DEMUXMAP pass.
+Dumping module `$paramod$3353e47743ecdeb69ff638f3ae31672861f2ad09\clock_divider'.
+Dumping module `$paramod\edge_pulse_sync\WIDTH=s32'00000000000000000000000000000011'.
+Dumping module `\bcd_mod12_counter'.
+Dumping module `\bcd_mod60_counter'.
+Dumping module `\bcd_to_7seg'.
+Dumping module `\jam_digital_top'.
+Dumping module `\seven_seg_mux6'.
+
+End of script. Logfile hash: 61f5e3d998, CPU: user 0.24s system 0.04s, MEM: 57.24 MB peak
+Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)
+Time spent: 80% 1x abc (0 sec), 3% 1x dfflibmap (0 sec), ...
