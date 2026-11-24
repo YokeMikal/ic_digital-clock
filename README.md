@@ -63,6 +63,7 @@ Jam_Digital/
 | `docs/01_spec_architecture.md` | Spesifikasi lengkap: aturan hitungan `00:00:00–11:59:59`, diagram blok Mermaid, tabel pinout 72-pin `jam_digital_top`, aturan clamping BCD, dan latensi sinkronizer. |
 | `docs/02_verification_report.md` | Laporan hasil Verilator lint, simulasi RTL (43.235 checks), cocotb, Post-P&R GLS (43.229 checks), matriks TC1–TC7, dan perintah GTKWave. |
 | `docs/03_physical_design_report.md` | Analisis mendalam P&R LibreLane: geometri die/core, komposisi sel, wirelength & via per layer, tabel STA 9-corner, Fmax, power, IR-drop, dan checklist DRC/LVS. |
+| `docs/04_wsl_inspection_guide.md` | Panduan langkah demi langkah di WSL Ubuntu untuk mengecek waveform GTKWave, layout GDSII di KLayout (`Shift + F`), OpenROAD GUI, dan metrik signoff dari terminal. |
 | `docs/layout_render.png` | Gambar render 2D layout GDSII akhir hasil KLayout untuk inspeksi visual cepat. |
 
 ### [`rtl/`](rtl/README.md) — Desain Hardware Verilog-2001
@@ -215,12 +216,29 @@ Untuk melihat waveform simulasi gate-level di GTKWave:
 gtkwave sim/results/jam_digital_gls.vcd &
 ```
 
-#### Langkah 7 — Inspeksi & Analisis Layout Fisik GDSII
-Buka layout akhir di **KLayout** dengan layer palette `sky130A`:
-```bash
-./scripts/open_klayout.sh
-```
-Atau tinjau metrik lengkap hasil P&R (timing 9 corner, power, IR-drop, DRC/LVS) langsung melalui dokumen [docs/03_physical_design_report.md](docs/03_physical_design_report.md) atau file mentah `pnr/runs/jam_digital_sky130/final/metrics.json`.
+#### Langkah 7 — Inspeksi & Analisis Layout Fisik GDSII serta Metrik Signoff
+Untuk panduan pengecekan paling lengkap di WSL Ubuntu, lihat [docs/04_wsl_inspection_guide.md](docs/04_wsl_inspection_guide.md). Ringkasnya:
+
+- **Inspeksi Layout GDSII di KLayout** (`sky130A.lyp`):
+  ```bash
+  ./scripts/open_klayout.sh
+  ```
+  *(Tips di KLayout: klik kanan `jam_digital_top` di panel **Hierarchy** → **Show As New Top**, lalu tekan **`Shift + F`** untuk melihat seluruh sel standar di dalam desain.)*
+
+- **Inspeksi Interaktif CTS, Congestion & Timing di OpenROAD GUI**:
+  ```bash
+  cd /home/yokemikal/eda/tools/librelane
+  nix-shell --run "librelane --last-run --flow OpenInOpenROAD /home/yokemikal/eda/designs/projects/Jam_Digital/pnr/config.json"
+  ```
+
+- **Tips Sinyal GTKWave (`jam_digital_rtl.vcd` / `jam_digital_gls.vcd`)**:
+  Tambahkan dari `dut`: `clk`, `rst_n`, `en_i`, `fast_mode_i`, `load_en_i`, `tick_1hz_o`, `hour_tens_o..sec_ones_o` *(format Decimal/Hex)*, `rollover_pulse_o`, `am_pm_o`, serta `digit_sel_o[5:0]` dan `seg_o[6:0]` *(format Binary)*.
+
+- **Filter Metrik Utama dari Terminal**:
+  ```bash
+  grep -E "die__area|core__area|utilization|wirelength\"|setup__ws\"|hold__ws\"|power__total|drc_error|lvs_error|xor_difference" pnr/runs/jam_digital_sky130/final/metrics.json
+  ```
+  Atau baca analisis lengkapnya di [docs/03_physical_design_report.md](docs/03_physical_design_report.md).
 
 ---
 

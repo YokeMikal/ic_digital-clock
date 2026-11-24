@@ -2,7 +2,7 @@
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/home/yokemikal/eda/venvs/ic-env/lib/python3.12/site-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
      -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /home/yokemikal/eda/venvs/ic-env/bin/python3
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
-     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1795508461
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1795509415
      0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /home/yokemikal/eda/venvs/ic-env/lib/python3.12/site-packages/cocotb
      0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 12.0 (stable)
      0.00ns INFO     cocotb.regression                  Running tests
@@ -18,9 +18,9 @@
   1070.00ns INFO     cocotb.regression                  ***************************************************************************************************************
                                                         ** TEST                                                   STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
                                                         ***************************************************************************************************************
-                                                        ** test_jam_digital_cocotb.test_reset_and_rollovers        PASS         470.00           0.00     393695.84  **
-                                                        ** test_jam_digital_cocotb.test_clamping_and_manual_sync   PASS         230.00           0.00     647198.19  **
-                                                        ** test_jam_digital_cocotb.test_seven_segment_mux          PASS         370.00           0.00     780347.06  **
+                                                        ** test_jam_digital_cocotb.test_reset_and_rollovers        PASS         470.00           0.00     415347.35  **
+                                                        ** test_jam_digital_cocotb.test_clamping_and_manual_sync   PASS         230.00           0.00     625030.57  **
+                                                        ** test_jam_digital_cocotb.test_seven_segment_mux          PASS         370.00           0.00     781276.39  **
                                                         ***************************************************************************************************************
-                                                        ** TESTS=3 PASS=3 FAIL=0 SKIP=0                                        1070.00           0.00     401221.51  **
+                                                        ** TESTS=3 PASS=3 FAIL=0 SKIP=0                                        1070.00           0.00     407829.08  **
                                                         ***************************************************************************************************************
